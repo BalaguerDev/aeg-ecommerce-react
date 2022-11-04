@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+  }
+  nav{
+      background: #f48026;
+      height: 95px;
+      margin-bottom: 100px;
+  }
+  
+   .navbar-toggler{
+        border: none;
+    } 
+
+    .collapse{
+        background: #f48026;
+    }
+  
+  
+    a img{
+     width:100px;
+     object-fit: contain;
+    }
+  
+    .nav-link{
+      color:white;
+    }
+  
+    .nav-link:hover{
+      color:black;
+    }
+
+    .dropdown{
+        background: #f48026;
+    }
+    
+    a{
+        text-decoration: none;
+        color:white;
+    }

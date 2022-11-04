@@ -1,0 +1,117 @@
+/* PRODUCT IMAGE CARD */
+.product-image{
+    width: 70px;
+    object-fit: contain;
+}
+
+.priceHeader{
+    height:25px;
+/*     background:#f48026; */
+    text-align: center;
+    font-size:15px;
+    font-weight: bold;
+    color:#f48026;
+}
+
+.cartTitle{
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.cardHeader{
+    height:4rem;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin:0 10px;
+}
+
+.cardType{
+    color:#272829;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: lighter;
+    height: 30px;
+    font-size: 0.85rem;
+    margin-bottom:5px;
+
+}
+
+.cardBody{
+    text-align: center;
+    font-size: 0.8rem;
+}
+.cardBottom{
+
+
+    height: 30px;
+}
+
+
+
+
+.cartIcon{
+    color: #f48026;
+    margin:10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.cartIcon:hover{
+    color:#272829;
+}
+
+.expandInfo{
+    color: #f48026;
+    margin:10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.expandInfo:hover{
+    color:#272829;
+}
+
+.titleCard{
+    font-size: 12px;
+}
+
+.col-info{
+    width: 60%;
+}
+
+button:disabled{
+    border: none
+}
+
+.subTitle{
+    font-size: 13px;
+}
+
+.description{
+    text-align: justify;
+    font-size: 13px;
+}
+
+.imgModal{
+    width: 200px;
+    object-fit: contain;
+
+}
+.carac{
+    margin-left: -100px;
+    font-size: 10px;
+}
+
+.divisor{
+    width:25%;
+    margin:0 auto;
+    padding-bottom: 10px;
+}
+
+.addButton{
+    color:#277c48;
+}
+.absButton{
+    color:#994141;
+}
+
+
