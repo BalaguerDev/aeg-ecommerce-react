@@ -43,8 +43,8 @@
 }
 .cardBottom{
 
-
-    height: 30px;
+    margin:40px 0 10px;
+    height: 20px;
 }
 
 
@@ -52,13 +52,14 @@
 
 .cartIcon{
     color: #f48026;
-    margin:10px;
+    margin:20px;
     font-size: 25px;
     cursor: pointer;
 }
 .cartIcon:hover{
     color:#272829;
 }
+
 
 .expandInfo{
     color: #f48026;

@@ -30,13 +30,6 @@ export default function ProductCard(props) {
               <p className="card-text">{product.title}</p>
             </div>
     
-            {/* family product */}
-            <div className="cardType d-flex justify-content-center align-items-center">
-              <p className="card-text">{product.type}</p>
-            </div>
-    
-    
-    
     
             {/* buttons product */}
             <div className=" cardBottom display-flex d-flex justify-content-between align-items-center">
@@ -53,6 +46,7 @@ export default function ProductCard(props) {
 
                     </div> ) : ( 
                     <>
+                    
                         <AddShoppingCart className="cartIcon" onClick = {() => onAdd(product)}/>
                         <div className="priceHeader">
                             <p className="card-price">{accounting.formatMoney(product.price, { symbol: "€", format: "%v %s" })}</p>

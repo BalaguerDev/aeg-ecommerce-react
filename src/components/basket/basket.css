@@ -2,11 +2,13 @@
     padding: 20px;
     box-shadow: 5px 10px 18px #f0f0f0;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .cardCart:hover{
     color:#f48026;
     box-shadow: 5px 10px 18px #dadada;
+    
     
 }
 
