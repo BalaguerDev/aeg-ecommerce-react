@@ -14,19 +14,31 @@ export default function Basket(props) {
     return (
  
         <aside className="block col-1">
-            <h2 className="text-center">Tu Compra</h2>
+ 
             <div>
-            {cartItems.length === 0 && <div>El carrito esta vacio</div>}
+            {cartItems.length === 0 && <div className="text-center">El carrito esta vacio</div>}
             {cartItems.map ((item) =>(
-                <div key={item.id} className="row cardCart d-flex align-items-center">
-                    <a href="#/" className="col-1 nameCart" data-bs-toggle="modal" data-bs-target={"#product" + item.id}>{item.title}</a>
+                <div key={item.id} className="cardCart d-flex justify-content-between align-items-center">
+                    <div className="div1Left">
+                        <a href="#/" className="nameCart" data-bs-toggle="modal" data-bs-target={"#product" + item.id}>{item.title}</a>
+                    </div>
+
+                    <div> 
+                        <button onClick={() => onRemove(item)} className="btn btn-sm absButton"><DoNotDisturbOnRoundedIcon/></button>
+                        <button onClick={() => onAdd(item)} className="btn btn-sm addButton"><AddCircleRoundedIcon/></button>
+                    </div>
+                    <div>
+                        {item.qty} x {formatMoney(item.price, { symbol: "€", format: "%v %s" })}
+                    </div>
+
+                    {/* <a href="#/" className="col-1 nameCart" data-bs-toggle="modal" data-bs-target={"#product" + item.id}>{item.title}</a>
                     <div className="col-1">
                         <button onClick={() => onRemove(item)} className="btn btn-sm absButton"><DoNotDisturbOnRoundedIcon/></button>
                         <button onClick={() => onAdd(item)} className="btn btn-sm addButton"><AddCircleRoundedIcon/></button>
                     </div>
                     <div className="col-1 text-right">
-                        {item.qty} x {formatMoney(item.price, { symbol: "€", format: "%v %s" })} 
-                    </div>
+                         {item.qty} x {formatMoney(item.price, { symbol: "€", format: "%v %s" })}  
+                    </div> */}
 
                 </div>
             ))}

@@ -5,7 +5,6 @@ import Header from './components/header/Header';
 import Main from './components/main/Main';
 import data from "./assets/db/db"
 import { useEffect, useState } from 'react';
-import Hero from './components/hero/Hero';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -56,7 +55,6 @@ function App() {
   return (
     <div className="App">
       <Header countCartItems={cartItems.length}/>
-      <Hero/>
 
       <div className="rowFirst">
         <Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>
