@@ -6,7 +6,9 @@ export default function Header(props) {
     const{countCartItems}=props;
     return (
         <div className="block">
-            <nav className="navbar navbar-expand-lg py-1 fixed-top">
+            <div className="blackOffert text-center fixed-top">
+                ENVIO <u>GRATUITO</u> POR COMPRAS MAYORES A 500€
+            <nav className="navbar navbar-expand-lg py-1 ">
                 <div className="container">
                     <a href="#/" className="imgLogo"><img src="assets/logo-AEG.png" alt="logo AEG" ></img></a>
 
@@ -60,6 +62,7 @@ export default function Header(props) {
                     </div>
                 </div>
             </nav>
+        </div>
         </div>
     )
 }

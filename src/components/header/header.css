@@ -27,7 +27,7 @@
     }
   
     .nav-link:hover{
-      color:black;
+      color:#272829;
     }
 
     .dropdown{
@@ -37,4 +37,11 @@
     a{
         text-decoration: none;
         color:white;
+    }
+    .blackOffert{
+      width:100%;
+      background:#272829;
+      color: white;
+      font-size: 12px;
+      height:20px;
     }
