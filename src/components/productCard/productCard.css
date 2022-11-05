@@ -41,17 +41,13 @@
     text-align: center;
     font-size: 0.8rem;
 }
-.cardBottom{
-
-    margin:40px 0 10px;
-    height: 20px;
-}
 
 
 
 
 .cartIcon{
-    color: #f48026;
+    color: #2a2a2a;
+    background:#f48026 ;
     margin:20px;
     font-size: 25px;
     cursor: pointer;
@@ -116,3 +112,15 @@ button:disabled{
 }
 
 
+.buttonInfoCard{
+    cursor: pointer;
+
+}
+.buttonInfoCard:hover{
+    color:#f48026
+    
+}
+
+.buttonAddCart{ 
+    background-color: #3d76ae;
+}
