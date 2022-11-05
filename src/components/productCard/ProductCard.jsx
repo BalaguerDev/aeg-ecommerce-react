@@ -40,7 +40,7 @@ export default function ProductCard(props) {
                     <div className="w-100 d-flex justify-content-center align-items-center">
                                                
                         <button onClick={() => onRemove(item)} className="btn btn-sm absButton">deshacer</button>
-                        <button className="btn btn-sm disabled cardBottom d-flex justify-content-between align-items-center border-0">Añadido al carrito</button>
+                        <button className="btn btn-sm disabled d-flex justify-content-between align-items-center border-0">Añadido al carrito</button>
                         
                         
 
