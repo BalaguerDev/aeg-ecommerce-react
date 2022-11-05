@@ -19,7 +19,7 @@ export default function Basket(props) {
             {cartItems.length === 0 && <div>El carrito esta vacio</div>}
             {cartItems.map ((item) =>(
                 <div key={item.id} className="row cardCart">
-                    <div className="col-1">{item.title}</div>
+                    <div className="col-1"data-bs-toggle="modal" data-bs-target={"#product" + item.id}> {item.title} </div>
                     <div className="col-1">
                         <button onClick={() => onRemove(item)} className="btn btn-sm absButton"><DoNotDisturbOnRoundedIcon/></button>
                         <button onClick={() => onAdd(item)} className="btn btn-sm addButton"><AddCircleRoundedIcon/></button>

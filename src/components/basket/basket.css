@@ -3,3 +3,10 @@
     box-shadow: 5px 10px 18px #f0f0f0;
     margin-bottom: 20px;
 }
+
+.cardCart:hover{
+    color:#f48026;
+    box-shadow: 5px 10px 18px #dadada;
+    
+}
+
