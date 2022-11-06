@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { AddShoppingCart } from '@mui/icons-material';
-import DoNotDisturbOnRoundedIcon from '@mui/icons-material/DoNotDisturbOnRounded';
-import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import accounting from "accounting";
 import './productCard.css';
-import InfoIcon from '@mui/icons-material/Info';
+
 
 
 export default function ProductCard(props) {
@@ -21,50 +20,58 @@ export default function ProductCard(props) {
 
 
           {/* name product */}
-          <div className="cardBody">
-            <p className="card-text">{product.name}</p>
+          <div className="cardHeader">
+            <p className="text-center">{product.name}</p>
           </div>
 
           {/* title product */}
-          <div className="cardHeader">
+          <div className="cardBody">
             <p className="card-text">{product.title}</p>
           </div>
 
         </div>
+
+          {/* price product */}
+          <div className="cardPrice">
+          <p className="priceText">{accounting.formatMoney(product.price, { symbol: "€", format: "%v %s" })}</p>
+          </div>
+          
+
         {/* buttons product */}
-        <div className=" cardBottom display-flex d-flex justify-content-between align-items-center">
+        <div className="">
 
 
-          {/* cart icon */}
+          {/* added cart */}
           {item ? (
-            <div className="w-100 d-flex justify-content-center align-items-center">
+             <div className="activeButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
+              
+             <ShoppingCartIcon className=""/>Añadir 1 más
+           
 
-              <button onClick={() => onRemove(item)} className="btn btn-sm absButton">deshacer</button>
-              <button className="btn btn-sm disabled d-flex justify-content-between align-items-center border-0">Añadido al carrito</button>
+         </div>) : 
+            
+            
+            (
+              <>
+              {/* not added cart */}
+            
+            <div className="cardButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
+              
+                <AddShoppingCart className=""/>{product.qty}Añadir al carrito
+              
 
-
-
-            </div>) : (
-            <>
-            <div className="buttonAddCart d-flex align-items-center justify-content-around w-100" onClick={() => onAdd(product)} >
-              <AddShoppingCart className="cartIcon"/><p className="card-price">{accounting.formatMoney(product.price, { symbol: "€", format: "%v %s" })}</p>
             </div>
               
             </>
           )
           }
 
-
-
-
-
-
         </div>
       </div>
 
       {/* Product Modal */}
 
-      <div className="modal fade" id={"product" + product.id} aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className=" cardModal modal fade" id={"product" + product.id} aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <h1 className="modal-title text-center" id="exampleModalLabel">{product.name}</h1>
