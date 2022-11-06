@@ -21,7 +21,7 @@ export default function Basket(props) {
                 <div key={item.id} className="row cardCart">
                     <div className="col-1"data-bs-toggle="modal" data-bs-target={"#product" + item.id}> {item.title} </div>
                     <div className="col-1">
-                        <button onClick={() => onRemove(item)} className="btn btn-sm absButton"><DoNotDisturbOnRoundedIcon/></button>
+                        <button onClick={() => onRemove(item)} className="btn btn-sm removeButton"><DoNotDisturbOnRoundedIcon/></button>
                         <button onClick={() => onAdd(item)} className="btn btn-sm addButton"><AddCircleRoundedIcon/></button>
                     </div>
                     <div className="col-1 text-right">
@@ -48,7 +48,7 @@ export default function Basket(props) {
                 </div>
                 <hr/>
                 <div className="row">
-                    <button className="btn btn-lg btn-block btn-secondary" onClick={() => alert("Proceder al pago")}>Procedemos con la compra</button>
+                    <button className="paidButton btn btn-sm btn-block" onClick={() => alert("Proceder al pago")}>REALIZAR PEDIDO</button>
                 </div>
                 </>
             )}
