@@ -1,6 +1,7 @@
 import accounting from "accounting";
 import DoNotDisturbOnRoundedIcon from '@mui/icons-material/DoNotDisturbOnRounded';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import DeleteIcon from '@mui/icons-material/Delete';
 import './basket.css';
 
 export default function Basket(props) {
@@ -18,15 +19,17 @@ export default function Basket(props) {
             <div>
             {cartItems.length === 0 && <div>El carrito esta vacio</div>}
             {cartItems.map ((item) =>(
-                <div key={item.id} className="row cardCart">
-                    <div className="col-1"data-bs-toggle="modal" data-bs-target={"#product" + item.id}> {item.title} </div>
-                    <div className="col-1">
-                        <button onClick={() => onRemove(item)} className="btn btn-sm removeButton"><DoNotDisturbOnRoundedIcon/></button>
-                        <button onClick={() => onAdd(item)} className="btn btn-sm addButton"><AddCircleRoundedIcon/></button>
+                <div key={item.id} className="row cardCart d-flex align-items-center justify-content-around">
+                    <div className="col-1 infoProduct"data-bs-toggle="modal" data-bs-target={"#product" + item.id}> {item.title} </div>
+                    <div className="col-1 d-flex justify-content-center">
+                        <button onClick={() => onRemove(item)} className="btn removeButton"><DoNotDisturbOnRoundedIcon/></button>
+                        <button onClick={() => onAdd(item)} className="btn addButton"><AddCircleRoundedIcon/></button>
                     </div>
-                    <div className="col-1 text-right">
+                    <div className="col-1 d-flex justify-content-end align-items-center">
                         {item.qty} x {accounting.formatMoney(item.price, { symbol: "€", format: "%v %s" })}
+                        <DeleteIcon className="deleteButton"/>
                     </div>
+
 
                 </div>
             ))}

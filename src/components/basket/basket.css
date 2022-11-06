@@ -3,16 +3,22 @@
     padding: 10px;
     box-shadow: 5px 10px 18px #f0f0f0;
     margin-bottom: 10px;
-    cursor: pointer;
+
 
 }
 
 .cardCart:hover{
-    color:#f48026;
     box-shadow: 5px 10px 18px #dadada;
-    
+   
+}
+
+.infoProduct{
+    cursor: pointer;
     
 }
+    .infoProduct:hover{ 
+        color:#f48026;
+    }
 
 .removeButton{
     color: #8c3535;
@@ -30,3 +36,12 @@
         background: #f48026;
         color: white;
 }   
+
+
+.deleteButton{
+    color:#272829;
+    margin-left:10px;
+}
+    .deleteButton:hover{
+        color:#8c3535;
+    }
