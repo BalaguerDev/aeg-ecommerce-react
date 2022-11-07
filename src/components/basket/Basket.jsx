@@ -15,27 +15,42 @@ export default function Basket(props) {
     return (
  
         <aside className="block">
-            <div>
+            
             {cartItems.length === 0 && <div>El carrito esta vacio</div>}
             {cartItems.map ((item) =>(
-                <div key={item.id} className="row cardCart d-flex align-items-center justify-content-around">
-                    <div className="col-1 infoProduct"data-bs-toggle="modal" data-bs-target={"#product" + item.id}> {item.title} </div>
-                    <div className="col-1 d-flex justify-content-center">
-                        <button onClick={() => onRemove(item)} className="btn removeButton"><DoNotDisturbOnRoundedIcon/></button>
-                        <button onClick={() => onAdd(item)} className="btn addButton"><AddCircleRoundedIcon/></button>
+                
+                <div key={item.id} className="row no-gutters align-items-center justify-content-between ">
+                    <div className="col">
+                        <span className="product-image media-middle">
+                            <img src={item.img} alt={item.name} className="img-fluid" data-bs-toggle="modal" data-bs-target={"#product" + item.id} />
+                        </span>
                     </div>
-                    <div className="col-1 d-flex justify-content-end align-items-center">
-                        {item.qty} x {accounting.formatMoney(item.price, { symbol: "€", format: "%v %s" })}
-                        <DeleteIcon className="deleteButton"/>
+                    
+                    <div className="col-7">
+                        <div class="pb-1 ">
+                            <p className="titleNameCard"data-bs-toggle="modal" data-bs-target={"#product" + item.id} >{item.title}</p>
+                            <span className="text-muted">
+                                {item.qty} x  
+                            </span>
+                            <span className="textPriceCard">
+                                &nbsp;{accounting.formatMoney(item.price, { symbol: "€", format: "%v %s" })}
+                            </span>
+                            <button onClick={() => onRemove(item)} className="col btn removeButton"><DoNotDisturbOnRoundedIcon/></button>
+                            <button onClick={() => onAdd(item)} className="col btn addButton"><AddCircleRoundedIcon/></button>
+                        </div>
                     </div>
 
+                    <div className="col col-delete">
+                        <DeleteIcon className="col deleteButton"/>
+                    </div>
+                    <hr />
+                   
 
                 </div>
             ))}
-            </div>
+            
             {cartItems.length !== 0 && (
                 <>
-                <hr/>
                 <div className="row my-1">
                     <div className="col-2">Precio</div>
                     <div className="col-1 text-right">{itemsPrice.toFixed(2)} €</div>

@@ -57,9 +57,10 @@ export default function Header(props) {
                                 <div className="dropdown dropdownCart">
                                     <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" 
                                     data-bs-auto-close="outside" aria-expanded="false">
-                                        <ShoppingCartIcon />
+                                        
                                         {countCartItems ? (
                                             <Badge badgeContent={countCartItems} color="success">
+                                                <ShoppingCartIcon />
                                             </Badge>) : ("")}
                                     </button>
                                     <ul className="dropdown-menu">

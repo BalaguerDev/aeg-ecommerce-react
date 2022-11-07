@@ -1,24 +1,15 @@
-.cardCart{
-    font-size: 13px;
-    padding: 10px;
-    box-shadow: 5px 10px 18px #f0f0f0;
-    margin-bottom: 10px;
-
-
-}
-
-.cardCart:hover{
-    box-shadow: 5px 10px 18px #dadada;
-   
-}
-
-.infoProduct{
+.titleNameCard{
+    font-weight: 500;
     cursor: pointer;
-    
 }
-    .infoProduct:hover{ 
-        color:#f48026;
-    }
+.titleNameCard:hover{
+    color: #f48026;
+}
+
+.img-fluid{
+    cursor: pointer;
+}
+
 
 .removeButton{
     color: #8c3535;
@@ -45,3 +36,8 @@
     .deleteButton:hover{
         color:#8c3535;
     }
+
+
+.textPriceCard{
+    font-weight: 500;
+}
