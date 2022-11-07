@@ -52,11 +52,10 @@ function App() {
   
   return (
     <div className="App">
-      <Header countCartItems={cartItems.length}/>
+      <Header cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} countCartItems={cartItems.length}/>
 
       <div className="rowFirst">
         <Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>
-        <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
       </div>
 
     </div>

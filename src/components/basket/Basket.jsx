@@ -14,8 +14,7 @@ export default function Basket(props) {
 
     return (
  
-        <aside className="block col-1">
-            <h2>Articulos Carrito</h2>
+        <aside className="block">
             <div>
             {cartItems.length === 0 && <div>El carrito esta vacio</div>}
             {cartItems.map ((item) =>(
@@ -37,20 +36,19 @@ export default function Basket(props) {
             {cartItems.length !== 0 && (
                 <>
                 <hr/>
-                <div className="row">
+                <div className="row my-1">
                     <div className="col-2">Precio</div>
                     <div className="col-1 text-right">{itemsPrice.toFixed(2)} €</div>
                 </div>
-                <div className="row">
+                <div className="row my-1">
                     <div className="col-2">Envio</div>
                     <div className="col-1 text-right">{shippingPrice.toFixed(2)} €</div>
                 </div>
-                <div className="row">
+                <div className="row my-1">
                     <div className="col-2">Precio Total</div>
                     <div className="col-1 text-right"><strong>{totalPrice.toFixed(2)} €</strong></div>
                 </div>
-                <hr/>
-                <div className="row">
+                <div className="row my-3">
                     <button className="paidButton btn btn-sm btn-block" onClick={() => alert("Proceder al pago")}>REALIZAR PEDIDO</button>
                 </div>
                 </>
