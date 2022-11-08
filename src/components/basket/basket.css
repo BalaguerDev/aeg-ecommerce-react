@@ -1,11 +1,13 @@
 .scrollElement{
     height: 350px;
-    
     overflow-y: scroll;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    padding:20px;
+    
 }
 
 .scrollElement::-webkit-scrollbar {
-    width: 10px;               
+    width: 10px;            
   }
   
   .scrollElement::-webkit-scrollbar-track {
@@ -34,17 +36,20 @@
 
 .img-fluid{
     cursor: pointer;
+    width:50px;
 }
 
 
 .removeButton{
     color: #8c3535;
-    font-size: medium;
+    font-size: small;
+    cursor:pointer;
 }
 
 .addButton{
     color: #37662c;
-    font-size: medium;
+    font-size: small;
+    cursor:pointer;
 }
 
 .paidButton{
@@ -58,19 +63,12 @@
 
 
 .deleteButton{
-    color:#272829;
-    width: 10%;
-    border: none;
-    background: none;
-    text-align: right;
+    color:#8c3535;
+    font-size: small;
+    cursor:pointer;
 }
     .deleteButton:hover{
         color:#8c3535;
     }
 
-
-.textPriceCard{
-    font-weight: 500;
-    margin-right: 20px;
-    }
 

@@ -6,6 +6,11 @@
     color:#f48026;
 }
 
+.card-img-top:hover{
+    padding:10px;
+    transition: 0.4s;
+
+}
 
 /* title product card */
 .cardHeader{
