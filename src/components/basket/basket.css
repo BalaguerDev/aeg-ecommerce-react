@@ -31,7 +31,9 @@
 
 .deleteButton{
     color:#272829;
-    margin-left:10px;
+    width: 10%;
+    border: none;
+    background: none;
 }
     .deleteButton:hover{
         color:#8c3535;
@@ -40,4 +42,5 @@
 
 .textPriceCard{
     font-weight: 500;
-}
+    margin-right: 20px;
+    }

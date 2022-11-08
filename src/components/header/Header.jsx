@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 export default function Header(props) {
-    const { cartItems, onAdd, onRemove } = props;
+    const { cartItems, onAdd, onRemove, onDelete } = props;
 
     const { countCartItems } = props;
 
@@ -54,17 +54,17 @@ export default function Header(props) {
 
                             <div>
 
-                                <div className="dropdown dropdownCart">
-                                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" 
+                                <div className="dropstart">
+                                    <button className="cartButton btn btn-outline-light" type="button" data-bs-toggle="dropdown" 
                                     data-bs-auto-close="outside" aria-expanded="false">
-                                        
+                                         <ShoppingCartIcon/>
                                         {countCartItems ? (
                                             <Badge badgeContent={countCartItems} color="success">
-                                                <ShoppingCartIcon />
+                                                 
                                             </Badge>) : ("")}
                                     </button>
                                     <ul className="dropdown-menu">
-                                        <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+                                        <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} />
                                     </ul>
                                 </div>
 

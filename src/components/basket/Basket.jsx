@@ -6,7 +6,7 @@ import './basket.css';
 
 export default function Basket(props) {
 
-    const {cartItems, onAdd, onRemove} = props;
+    const {cartItems, onAdd, onRemove, onDelete} = props;
     const itemsPrice = cartItems.reduce((a,c) => a + c.qty * c.price, 0);
     /* const ivaPrice = items.price * 0.21; */
     const shippingPrice = itemsPrice > 500 ? 0 : 12;
@@ -27,7 +27,7 @@ export default function Basket(props) {
                     </div>
                     
                     <div className="col-7">
-                        <div class="pb-1 ">
+                        <div className="pb-1 ">
                             <p className="titleNameCard"data-bs-toggle="modal" data-bs-target={"#product" + item.id} >{item.title}</p>
                             <span className="text-muted">
                                 {item.qty} x  
@@ -40,9 +40,10 @@ export default function Basket(props) {
                         </div>
                     </div>
 
-                    <div className="col col-delete">
-                        <DeleteIcon className="col deleteButton"/>
-                    </div>
+                    
+                        <button onClick={() => onDelete(item)} className="col deleteButton"><DeleteIcon/></button>
+                        
+
                     <hr />
                    
 

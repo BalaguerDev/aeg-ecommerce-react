@@ -1,5 +1,4 @@
 import './app.css';
-import Basket from './components/basket/Basket';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
 import data from "./assets/db/db"
@@ -39,8 +38,21 @@ function App() {
       setCartItems(newCartItems);
       localStorage.setItem("cartItems", JSON.stringify(newCartItems));
     }
- 
   }
+    
+
+  const onDelete = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+    if(exist.qty > 0){
+      const newCartItems = cartItems.filter((x) => x.id !== product.id);
+      setCartItems(newCartItems);
+      localStorage.setItem("cartItems", JSON.stringify(newCartItems));
+    }
+  }
+ 
+
+  
+  
 
   useEffect(() => {
     setCartItems(localStorage.getItem("cartItems")
@@ -52,10 +64,10 @@ function App() {
   
   return (
     <div className="App">
-      <Header cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} countCartItems={cartItems.length}/>
+      <Header cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} countCartItems={cartItems.length}/>
 
       <div className="rowFirst">
-        <Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>
+        <Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} products={products}/>
       </div>
 
     </div>
