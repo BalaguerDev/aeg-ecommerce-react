@@ -5,7 +5,7 @@ import dataProduct from "../../assets/db/db"
 import accounting from "accounting";
 import { AddShoppingCart } from '@mui/icons-material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Skeleton from "react-loading-skeleton";
+
 
 
 
@@ -39,9 +39,7 @@ export default function Main(props) {
     const Loading = () => {
         return (
             <>
-                <div className="col-md-3">
-                    <Skeleton height={350}/>
-                </div>
+                Loading....
             </>
         );
     };
@@ -57,12 +55,12 @@ console.log(filter)
     
         return (
             <>
-                <div className="buttonsType d-flex justify-content-center mb-5 pb-5">
-                    <button className="btn btn-outline-dark me-2" onClick={()=> setFilter(products)}>TODAS LAS HERRAMIENTAS</button>
-                    <button className="btn btn-outline-dark me-2" onClick={()=> filterProduct("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
-                    <button className="btn btn-outline-dark me-2" onClick={()=> filterProduct("Fijación")}>FIJACIÓN</button>
-                    <button className="btn btn-outline-dark me-2" onClick={()=> filterProduct("Herramientas madera")}>HERRAMIENTAS PARA MADERA</button>
-                    <button className="btn btn-outline-dark me-2" onClick={()=> filterProduct("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
+                <div className="buttonsType d-flex justify-content-around mb-5 pb-5">
+                    <button className="btn btn-outline-dark me-2 type1" onClick={()=> filterProduct("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
+                    <button className="btn btn-outline-dark me-2 type2" onClick={()=> setFilter(products)}>TODAS LAS HERRAMIENTAS</button>
+                    <button className="btn btn-outline-dark me-2 type3" onClick={()=> filterProduct("Fijación")}>HERRAMIENTAS DE IMPACTO</button>
+                    <button className="btn btn-outline-dark me-2 type4" onClick={()=> filterProduct("Herramientas madera")}>HERRAMIENTAS PARA MADERA</button>
+                    <button className="btn btn-outline-dark me-2 type5" onClick={()=> filterProduct("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
                 </div>
                 <Grid container spacing={2} padding={2}>
                     {products.map((product) => {
