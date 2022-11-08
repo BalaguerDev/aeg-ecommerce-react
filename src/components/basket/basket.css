@@ -45,18 +45,27 @@
     font-size: small;
     cursor:pointer;
 }
+    .removeButton:active{
+        color: #272829;
+
+    }
 
 .addButton{
     color: #37662c;
     font-size: small;
     cursor:pointer;
+
 }
+    .addButton:active{
+        color:#f48026
+    }
+
 
 .paidButton{
     background: #272829;
     color: white;
 }
-    .paidButton:hover{
+    .paidButton:active{
         background: #f48026;
         color: white;
 }   
@@ -64,7 +73,7 @@
 
 .deleteButton{
     color:#8c3535;
-    font-size: small;
+    font-size: 10px;
     cursor:pointer;
 }
     .deleteButton:hover{
