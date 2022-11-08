@@ -8,12 +8,14 @@ import './productCard.css';
 
 export default function ProductCard(props) {
 
-  const { item, product, onAdd, onRemove } = props;
+  const { item, product, onAdd} = props;
 
+
+ 
 
   return (
+    <>
     <div>
-
       <div className="card">
         <div className="buttonInfoCard" data-bs-toggle="modal" data-bs-target={"#product" + product.id} >
           <img src={product.img} className="card-img-top" alt={product.name} />
@@ -31,11 +33,11 @@ export default function ProductCard(props) {
 
         </div>
 
-          {/* price product */}
-          <div className="cardPrice">
+        {/* price product */}
+        <div className="cardPrice">
           <p className="priceText">{accounting.formatMoney(product.price, { symbol: "€", format: "%v %s" })}</p>
-          </div>
-          
+        </div>
+
 
         {/* buttons product */}
         <div className="">
@@ -43,27 +45,27 @@ export default function ProductCard(props) {
 
           {/* added cart */}
           {item ? (
-             <div className="activeButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
-              
-             <ShoppingCartIcon className=""/>Añadir 1 más
-           
+            <div className="activeButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
 
-         </div>) : 
-            
-            
+              <ShoppingCartIcon className="" />Añadir 1 más
+
+
+            </div>) :
+
+
             (
               <>
-              {/* not added cart */}
-            
-            <div className="cardButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
-              
-                <AddShoppingCart className=""/>{product.qty}Añadir al carrito
-              
+                {/* not added cart */}
 
-            </div>
-              
-            </>
-          )
+                <div className="cardButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
+
+                  <AddShoppingCart className="" />{product.qty}Añadir al carrito
+
+
+                </div>
+
+              </>
+            )
           }
 
         </div>
@@ -112,7 +114,7 @@ export default function ProductCard(props) {
 
     </div>
 
-
+    </>
 
   )
 }

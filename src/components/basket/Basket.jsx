@@ -8,7 +8,8 @@ export default function Basket(props) {
 
     const {cartItems, onAdd, onRemove, onDelete} = props;
     const itemsPrice = cartItems.reduce((a,c) => a + c.qty * c.price, 0);
-    /* const ivaPrice = items.price * 0.21; */
+    const sinIva = itemsPrice * 0.79;
+    const ivaCart = itemsPrice * 0.21;
     const shippingPrice = itemsPrice > 500 ? 0 : 12;
     const totalPrice = itemsPrice + shippingPrice;
 
@@ -20,7 +21,7 @@ export default function Basket(props) {
             {cartItems.length === 0 && <div>El carrito esta vacio</div>}
             {cartItems.map ((item) =>(
                 <>
-                    <div key={item.id} className="row itemDivCart row align-items-center my-4">
+                    <div key={item.id} className="row itemDivCart row align-items-center">
                         <div className="col">
                             <img src={item.img} alt={item.name} className="img-fluid" data-bs-toggle="modal" data-bs-target={"#product" + item.id} />
                         </div>
@@ -50,10 +51,16 @@ export default function Basket(props) {
             {cartItems.length !== 0 && (
                 <>
                 <div className="row mt-3">
-                    <div className="col-2">Precio</div>
-                    <div className="col-1 d-flex justify-content-end">{itemsPrice.toFixed(2)} €</div>
+                    <div className="col-2">Coste sin iva</div>
+                    <div className="col-1 d-flex justify-content-end">{sinIva.toFixed(2)} €</div>
                 </div>
-                <div className="row my-1">
+                <div className="row iva">
+                    <div className="col-2">Iva 21%</div>
+                    <div className="col-1 d-flex justify-content-end">{ivaCart.toFixed(2)} €</div>
+                </div>
+
+
+                <div className="row">
                     <div className="col-2">Envio</div>
                     <div className="col-1 d-flex justify-content-end">{shippingPrice.toFixed(2)} €</div>
                 </div>

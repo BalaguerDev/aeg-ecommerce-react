@@ -4,6 +4,7 @@ import Main from './components/main/Main';
 import data from "./assets/db/db"
 import { useEffect, useState } from 'react';
 
+
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
@@ -66,8 +67,8 @@ function App() {
     <div className="App">
       <Header cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} countCartItems={cartItems.length}/>
 
-      <div className="rowFirst">
-        <Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} products={products}/>
+      <div className="row">
+        <Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>
       </div>
 
     </div>

@@ -19,6 +19,7 @@ const data = {
   products:[
     {
       id: 1,
+      idType:1,
       title: "Taladro de percusión ultracompacto de 12V y 2 velocidades",
       name: "BSB 12C2 LI-402B",
       type: "Perforación y Demolición",
@@ -31,6 +32,7 @@ const data = {
     },
     {
       id: 2,
+      idType:1,
       title: "Taladro de percusión sin escobillas de 18V",
       name: "BSB 18BLLI-602C",
       type: "Perforación y Demolición",
@@ -43,6 +45,7 @@ const data = {
     },
     {
       id: 3,
+      idType:1,
       title: "Taladro de percusión de 18V",
       name: "BSB 18C2X LI-202C",
       type: "Perforación y Demolición",
@@ -55,6 +58,7 @@ const data = {
     },
     {
       id: 4,
+      idType:1,
       title: "Martillo rotativo SDS-Plus sin escobillas 18V",
       name: "BBH 18BL2-0",
       type: "Perforación y Demolición",
@@ -67,6 +71,7 @@ const data = {
     },
     {
       id: 5,
+      idType:1,
       title: "Martillo de 12V",
       name: "BBH 12 LI-202C",
       type: "Perforación y Demolición",
@@ -78,7 +83,8 @@ const data = {
       quantity:0
     },
     {
-      id: 6,
+      id: 6, 
+      idType:2,
       title: "Atornillador de impacto compacto 12V",
       name: "BSS 12C-0",
       type: "Fijación",
@@ -91,6 +97,7 @@ const data = {
     },
     {
       id: 7,
+      idType:2,
       title: "Atornillador de impacto sin escobillas 18V",
       name: "BSS 18C3B3-0",
       type: "Fijación",
@@ -103,6 +110,7 @@ const data = {
     },
     {
       id: 8,
+      idType:2,
       title: "Llave de Impacto Subcompacta sin escobillas 18V",
       name: "BSS 18S12BL-0",
       type: "Fijación",
@@ -115,6 +123,7 @@ const data = {
     },
     {
       id: 9,
+      idType:2,
       title: "LLave de impacto de alto par ½'' sin escobillas 18V",
       name: "BSS 18HTF12B6-0",
       type: "Fijación",
@@ -127,6 +136,7 @@ const data = {
     },
     {
       id: 10,
+      idType:3,
       title: "Sierra de calar sin escobillas 18V",
       name: "BST 18BLX LI-402C",
       type: "Herramientas madera",
@@ -139,6 +149,7 @@ const data = {
     },
     {
       id: 11,
+      idType:3,
       title: "Sierra sable subcompacta sin escobillas 18V",
       name: "BUS 18SBL-0",
       type: "Herramientas madera",
@@ -151,6 +162,7 @@ const data = {
     },
     {
       id: 12,
+      idType:3,
       title: "Ingletadora telescópica sin escobillas 18V",
       name: "BPS18-254BL-0",
       type: "Herramientas madera",
@@ -163,6 +175,7 @@ const data = {
     },
     {
       id: 13,
+      idType:4,
       title: "Amoladora de 230mm sin escobillas 18V",
       name: "BEWS 18-230BL LI-602C",
       type: "Herramientas metal",
@@ -175,6 +188,7 @@ const data = {
     },
     {
       id: 14,
+      idType:4,
       title: "Amoladora sin escobillas 18V 115mm con interruptor deslizante",
       name: "BEWS 18-115BL-0",
       type: "Herramientas metal",
@@ -187,6 +201,7 @@ const data = {
     },
     {
       id: 15,
+      idType:4,
       title: "Amoladora sin escobillas 18V con interruptor de paleta",
       name: "BEWS 18-125BLPX-602C",
       type: "Herramientas metal",

@@ -10,6 +10,17 @@ nav{
     margin-bottom: 100px;
 }
 
+.navBar{
+  background: #f48026;
+}
+
+.containerNav{
+  background: #f48026;
+}
+.navbar-toggler{
+  background: #f48026;
+  color:white;
+}
 
 .navbar-toggler{
   border: none;
@@ -19,6 +30,7 @@ nav{
 a img{
   width:100px;
   object-fit: contain;
+  background: #f48026;
 }
 
   

@@ -37,6 +37,7 @@
 .img-fluid{
     cursor: pointer;
     width:50px;
+    object-fit: contain;
 }
 
 
@@ -81,3 +82,8 @@
     }
 
 
+
+.iva{
+    font-size: small;
+    color: #272829ae;
+}

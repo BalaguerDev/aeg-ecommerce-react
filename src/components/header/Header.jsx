@@ -10,11 +10,11 @@ export default function Header(props) {
     const { countCartItems } = props;
 
     return (
-        <div className="block">
+        <div className="block navBar">
             <div className="blackOffert text-center fixed-top">
                 ENVIO <u>GRATUITO</u> POR COMPRAS MAYORES A 500€
                 <nav className="navbar navbar-expand-lg py-1 ">
-                    <div className="container">
+                    <div className="container containerNav">
                         <a href="#/" className="imgLogo"><img src="assets/logo-AEG.png" alt="logo AEG" ></img></a>
 
                         <button className="btn btn-outline-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
