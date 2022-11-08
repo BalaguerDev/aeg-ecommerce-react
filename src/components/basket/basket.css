@@ -1,3 +1,29 @@
+.scrollElement{
+    height: 350px;
+    
+    overflow-y: scroll;
+}
+
+.scrollElement::-webkit-scrollbar {
+    width: 10px;               
+  }
+  
+  .scrollElement::-webkit-scrollbar-track {
+    background: #ebebeb;        
+    border-radius: 20px; 
+  }
+  
+  .scrollElement::-webkit-scrollbar-thumb {
+    background-color: #f48026;    
+    border-radius: 20px;       
+    border:2px solid  #ebebeb;
+  }
+
+
+.itemDivCart{
+    width:100%;
+}
+
 .titleNameCard{
     font-weight: 500;
     cursor: pointer;
@@ -13,10 +39,12 @@
 
 .removeButton{
     color: #8c3535;
+    font-size: medium;
 }
 
 .addButton{
     color: #37662c;
+    font-size: medium;
 }
 
 .paidButton{
@@ -34,6 +62,7 @@
     width: 10%;
     border: none;
     background: none;
+    text-align: right;
 }
     .deleteButton:hover{
         color:#8c3535;
@@ -44,3 +73,4 @@
     font-weight: 500;
     margin-right: 20px;
     }
+

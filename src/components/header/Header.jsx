@@ -2,7 +2,6 @@ import { Badge } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './header.css';
 import Basket from "../basket/Basket";
-import { useState } from "react";
 
 
 export default function Header(props) {
