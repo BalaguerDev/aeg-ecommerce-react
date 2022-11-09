@@ -39,7 +39,7 @@ export default function Main(props) {
                         
                         return (
                             
-                                <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
+                                <Grid key={product.id} item xs={6} sm={4} md={3} lg={2}>
                                     <ProductCard product={product} item={cartItems.find((x) => x.id === product.id)} onAdd={onAdd} onRemove={onRemove}/>
                                 </Grid>
                             

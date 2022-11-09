@@ -3,6 +3,7 @@ import Header from './components/header/Header';
 import Main from './components/main/Main';
 import dataProduct from "./assets/db/db"
 import { useEffect, useState } from 'react';
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -70,6 +71,8 @@ function App() {
       <div className="row">
         <Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>
       </div>
+
+      <Footer/>
 
     </div>
   );
