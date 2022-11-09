@@ -8,7 +8,7 @@ import './productCard.css';
 
 export default function ProductCard(props) {
 
-  const { item, product, onAdd} = props;
+  const { item, product, onAdd, onRemove} = props;
 
 
  

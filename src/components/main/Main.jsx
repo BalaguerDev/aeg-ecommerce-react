@@ -1,54 +1,26 @@
 import { Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+
 import ProductCard from "../productCard/ProductCard";
 import dataProduct from "../../assets/db/db"
-import accounting from "accounting";
-import { AddShoppingCart } from '@mui/icons-material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
-
+import { useState } from "react";
 
 
 
 export default function Main(props) {
-    const { cartItems, products, onAdd, onRemove } = props;
 
-    const [data, setData] = useState([]);
-    const [filter, setFilter] = useState(dataProduct);
-    const [loading, setLoading] = useState(false);
-    let component = true;
+    const {cartItems, onAdd, onRemove, onDelete} = props;
+    const {products} = dataProduct;
+    const [data,setData]=useState(dataProduct);
 
-    useEffect(() => {
-        const getProducts = async () => {
-            setLoading(true);
-            const response = await products.map(() => {
-                if (component) {
-                    setData(response);
-                    setFilter(response);
-                    setLoading(false);
-                }
-
-                return () => {
-                    component = false;
-                }
-            });
-            getProducts();
-        }
-    }, [])
-
-    const Loading = () => {
-        return (
-            <>
-                Loading....
-            </>
-        );
-    };
-
-    const filterProduct = (cat) =>{
-        const updatedList = products.filter((x) => x.type === cat);
-        setFilter(updatedList);
+    const filterResult =(typeItem) => {
+        const result = dataProduct.filter((curData)=>{
+            return curData.type===typeItem
+        });
+        setData(result);
     }
-console.log(filter)
+
+
+
 
     const ShowProducts = () => {
       
@@ -56,14 +28,14 @@ console.log(filter)
         return (
             <>
                 <div className="buttonsType d-flex justify-content-around mb-5 pb-5">
-                    <button className="btn btn-outline-dark me-2 type1" onClick={()=> filterProduct("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
-                    <button className="btn btn-outline-dark me-2 type2" onClick={()=> setFilter(products)}>TODAS LAS HERRAMIENTAS</button>
-                    <button className="btn btn-outline-dark me-2 type3" onClick={()=> filterProduct("Fijación")}>HERRAMIENTAS DE IMPACTO</button>
-                    <button className="btn btn-outline-dark me-2 type4" onClick={()=> filterProduct("Herramientas madera")}>HERRAMIENTAS PARA MADERA</button>
-                    <button className="btn btn-outline-dark me-2 type5" onClick={()=> filterProduct("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
+                    <button className="btn btn-outline-dark me-2 type2" onClick={()=> setData(dataProduct)}>TODAS LAS HERRAMIENTAS</button>
+                    <button className="btn btn-outline-dark me-2 type1" onClick={()=> filterResult("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
+                    <button className="btn btn-outline-dark me-2 type3" onClick={()=> filterResult("Fijación")}>HERRAMIENTAS DE IMPACTO</button>
+                    <button className="btn btn-outline-dark me-2 type4" onClick={()=> filterResult("Herramientas madera")}>HERRAMIENTAS PARA MADERA</button>
+                    <button className="btn btn-outline-dark me-2 type5" onClick={()=> filterResult("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
                 </div>
                 <Grid container spacing={2} padding={2}>
-                    {products.map((product) => {
+                    {data.map((product) => {
                         return (
                             <>
                                 <Grid key ={product.id} item xs={12} sm={6} md={4} lg={3}>
@@ -89,7 +61,7 @@ console.log(filter)
                     </div>
                 </div>
                 <div className="row justify-content-center">
-                    {loading ? <Loading /> : <ShowProducts />}
+                   <ShowProducts />
                 </div>
             </div>
         </div>

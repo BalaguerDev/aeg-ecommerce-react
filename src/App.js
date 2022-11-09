@@ -1,14 +1,14 @@
 import './app.css';
 import Header from './components/header/Header';
 import Main from './components/main/Main';
-import data from "./assets/db/db"
+import dataProduct from "./assets/db/db"
 import { useEffect, useState } from 'react';
 
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  const {products} = data;
+  const {products} = dataProduct;
 
   const onAdd = (product) =>{
     const exist = cartItems.find((x) => x.id === product.id);

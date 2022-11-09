@@ -46,20 +46,3 @@ body{
   margin:30px 0 0 0;  
 }
 
-.type1, .type2, .type3, .type4,.type5{
-  height:300px;
-  width:250px;
-  border: none;
-}
-.type1, .type2, .type3, .type4,.type5:hover{
-  background:#f48026;
-}
-
-.type3{
-  color:white;
-  font-weight: 700;
-  background: url("./assets/img/impacto.jpeg");
-}.type3:hover{
-  background-image: url("./assets/img/impacto.jpeg");
-background:#f47f2673;
-}

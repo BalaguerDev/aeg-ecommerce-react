@@ -15,8 +15,7 @@ import img_14 from '../img/product-img/BEWS_18-115BL-0.jpg'
 import img_15 from '../img/product-img/BEWS_18-125BLPX-602C.jpg'
 
 
-const data = {
-  products:[
+const dataProduct = [
     {
       id: 1,
       idType:1,
@@ -213,6 +212,6 @@ const data = {
       quantity:0
     }
   ]
-}
 
-export default data;
+
+export default dataProduct;
