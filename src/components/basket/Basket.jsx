@@ -20,8 +20,9 @@ export default function Basket(props) {
             <div className="scrollElement">
             {cartItems.length === 0 && <div>El carrito esta vacio</div>}
             {cartItems.map ((item) =>(
-                <>
-                    <div key={item.id} className="row itemDivCart row align-items-center">
+                
+                <div key={item.id}>
+                    <div  className="row itemDivCart row align-items-center">
                         <div className="col">
                             <img src={item.img} alt={item.name} className="img-fluid" data-bs-toggle="modal" data-bs-target={"#product" + item.id} />
                         </div>
@@ -45,7 +46,9 @@ export default function Basket(props) {
                         </div>
                     </div>
                     <hr />
-                    </>
+                    
+                </div>
+
             ))}
             </div>
             {cartItems.length !== 0 && (

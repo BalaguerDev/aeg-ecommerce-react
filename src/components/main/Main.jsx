@@ -36,12 +36,13 @@ export default function Main(props) {
                 </div>
                 <Grid container spacing={2} padding={2}>
                     {data.map((product) => {
+                        
                         return (
-                            <>
-                                <Grid key ={product.id} item xs={12} sm={6} md={4} lg={3}>
+                            
+                                <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
                                     <ProductCard product={product} item={cartItems.find((x) => x.id === product.id)} onAdd={onAdd} onRemove={onRemove}/>
                                 </Grid>
-                            </>
+                            
                         )
                     })}
                 </Grid>
