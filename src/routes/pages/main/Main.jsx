@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 
-import ProductCard from "../productCard/ProductCard";
-import dataProduct from "../../assets/db/db"
+import ProductCard from "../../../components/productCard/ProductCard";
+import dataProduct from "../../../assets/db/db"
 import { useState } from "react";
 
 
@@ -28,11 +28,16 @@ export default function Main(props) {
         return (
             <>
                 <div className="buttonsType d-flex justify-content-around mb-5 pb-5">
-                    <button className="btn btn-outline-dark me-2 type2" onClick={()=> setData(dataProduct)}>TODAS LAS HERRAMIENTAS</button>
-                    <button className="btn btn-outline-dark me-2 type1" onClick={()=> filterResult("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
-                    <button className="btn btn-outline-dark me-2 type3" onClick={()=> filterResult("Fijación")}>HERRAMIENTAS DE IMPACTO</button>
-                    <button className="btn btn-outline-dark me-2 type4" onClick={()=> filterResult("Herramientas madera")}>HERRAMIENTAS PARA MADERA</button>
-                    <button className="btn btn-outline-dark me-2 type5" onClick={()=> filterResult("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
+                    <button className="me-2 type1" onClick={()=> setData(dataProduct)}>TODAS LAS HERRAMIENTAS</button>
+
+                    <button className="me-2 type2" onClick={()=> filterResult("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
+
+                    <button className="me-2 type3" onClick={()=> filterResult("Fijación")}>HERRAMIENTAS DE IMPACTO</button>
+
+                    <button className="me-2 type4" onClick={()=> filterResult("Herramientas madera")}>HERRAMIENTAS PARA MADERA</button>
+
+                    <button className="me-2 type5" onClick={()=> filterResult("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
+
                 </div>
                 <Grid container spacing={2} padding={2}>
                     {data.map((product) => {

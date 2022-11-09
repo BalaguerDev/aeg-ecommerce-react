@@ -1,9 +1,12 @@
 import './app.css';
 import Header from './components/header/Header';
-import Main from './components/main/Main';
+import Main from './routes/pages/main/Main';
+import CheckoutCart from './routes/pages/checkoutCart/CheckoutCart';
+
 import dataProduct from "./assets/db/db"
 import { useEffect, useState } from 'react';
 import Footer from './components/footer/Footer';
+import {Switch, BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -65,16 +68,27 @@ function App() {
 
   
   return (
-    <div className="App">
-      <Header cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} countCartItems={cartItems.length}/>
 
-      <div className="row">
-        <Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>
-      </div>
+    
+      <Router>
+        <div className="App">
+          <Header cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} countCartItems={cartItems.length}/>
+        
+            <Routes>
 
-      <Footer/>
+              <Route path="/pedido" element={<CheckoutCart/>} />
+              
+              <Route path="/" element={<Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>} />
+              
+            </Routes>
+          
+        </div>
+      </Router>
 
-    </div>
+     
+      
+ 
+    
   );
 }
 

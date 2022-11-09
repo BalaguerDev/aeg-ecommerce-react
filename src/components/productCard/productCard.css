@@ -60,5 +60,57 @@
         color: #f48026;
         }
 
+.type1, .type2, .type3, .type4, .type5{
+    border: none;
+    width: 250px;
+    height: 200px;
+    background-position: center;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    font-weight: 700;
+    filter: grayscale(100%);
+    border-radius: 25px;
+}
+.type1, .type2, .type3, .type4, .type5:hover{
+    background-color: #f48026;
+}
 
+.type1{
+    background-image: url(../../assets/img/all.jpg);
+
+}
+    .type1:hover{
+        filter: grayscale(0%);
+        padding: 10px;
+    }
+
+.type2{
+    background-image: url(../../assets/img/demolicion.webp);
+}
+    .type2:hover{
+        filter: grayscale(0%);
+    }
+
+.type3{
+    background-image: url(../../assets/img/impacto.jpeg);
+}
+    .type3:hover{
+        filter: grayscale(0%);
+    }
+
+.type4{
+    background-image: url(../../assets/img/madera.jpg);
+}
+    .type4:hover{
+        filter: grayscale(0%);
+    }
+
+.type5{
+    background-image: url(../../assets/img/metal.jpg);
+}
+    .type5:hover{
+        filter: grayscale(0%);
+    }
 
