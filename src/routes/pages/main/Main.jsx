@@ -1,22 +1,32 @@
 import { Grid } from "@mui/material";
-
-import ProductCard from "../../../components/productCard/ProductCard";
-import dataProduct from "../../../assets/db/db"
-import { useState } from "react";
-
+import React, {useEffect,useState } from 'react'
+import {apiConnect} from "../../../api/Api";
+import ProductCard from "../../../components/productCard/ProductCard"
 
 
 export default function Main(props) {
 
-    const {cartItems, onAdd, onRemove, onDelete} = props;
-    const {products} = dataProduct;
-    const [data,setData]=useState(dataProduct);
+    const {cartItems, onAdd, onRemove,} = props;
+    const [filterData, setFilterData]= useState([]);            /* productos filtradors */
+    const [allData, setAllData] = useState();                   /* TODOS LOS PRODUCTOS */
+    const url = "http://localhost:3000/products";
+
+    useEffect(()=>{
+        const connection = async () => {
+            const response = await apiConnect(url);
+            setFilterData(prev => prev = response);
+            setAllData(prev => prev = response);
+        }
+        connection()
+    }, [url])
+
+    
 
     const filterResult =(typeItem) => {
-        const result = dataProduct.filter((curData)=>{
+        const result = allData.filter((curData)=>{
             return curData.type===typeItem
         });
-        setData(result);
+        setFilterData(result);
     }
 
 
@@ -28,7 +38,7 @@ export default function Main(props) {
         return (
             <>
                 <div className="buttonsType d-flex justify-content-around mb-5 pb-5">
-                    <button className="me-2 type1" onClick={()=> setData(dataProduct)}>TODAS LAS HERRAMIENTAS</button>
+                    <button className="me-2 type1" onClick={()=> setFilterData(allData)}>TODAS LAS HERRAMIENTAS</button>
 
                     <button className="me-2 type2" onClick={()=> filterResult("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
 
@@ -39,8 +49,9 @@ export default function Main(props) {
                     <button className="me-2 type5" onClick={()=> filterResult("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
 
                 </div>
+
                 <Grid container spacing={2} padding={2}>
-                    {data.map((product) => {
+                    {filterData.map((product) => {
                         
                         return (
                             

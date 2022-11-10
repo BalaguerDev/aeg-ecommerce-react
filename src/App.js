@@ -6,13 +6,15 @@ import CheckoutCart from './routes/pages/checkoutCart/CheckoutCart';
 import dataProduct from "./assets/db/db"
 import { useEffect, useState } from 'react';
 import Footer from './components/footer/Footer';
-import {Switch, BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
   const {products} = dataProduct;
+
+  
 
   const onAdd = (product) =>{
     const exist = cartItems.find((x) => x.id === product.id);
