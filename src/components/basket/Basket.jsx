@@ -73,7 +73,7 @@ export default function Basket(props) {
                     <div className="col-1 d-flex justify-content-end"><strong>{totalPrice.toFixed(2)} €</strong></div>
                 </div>
                 <div className="row my-2">
-                    <Link className="btn btn-sm btn-block paidButton" to="/pedido"></Link>
+                    <Link className="btn btn-sm btn-block paidButton" to="/pedido">REALIZAR PEDIDO</Link>
                 
                 </div>
                 </>

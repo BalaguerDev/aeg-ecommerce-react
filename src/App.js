@@ -71,6 +71,7 @@ function App() {
 
     
       <Router>
+        
         <div className="App">
           <Header cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} countCartItems={cartItems.length}/>
         
@@ -81,6 +82,8 @@ function App() {
               <Route path="/" element={<Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>} />
               
             </Routes>
+            
+          <Footer/>
           
         </div>
       </Router>
