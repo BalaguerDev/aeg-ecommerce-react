@@ -3,6 +3,7 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import './basket.css';
+import { Link } from "react-router-dom";
 
 export default function Basket(props) {
 
@@ -72,7 +73,8 @@ export default function Basket(props) {
                     <div className="col-1 d-flex justify-content-end"><strong>{totalPrice.toFixed(2)} €</strong></div>
                 </div>
                 <div className="row my-2">
-                    <button className="paidButton btn btn-sm btn-block" onClick={() => alert("Proceder al pago")}>REALIZAR PEDIDO</button>
+                    <Link className="btn btn-sm btn-block paidButton" to="/pedido"></Link>
+                
                 </div>
                 </>
             )}
