@@ -82,7 +82,7 @@ function App() {
               <Route path="/" element={<Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>} />
               
             </Routes>
-            
+
           <Footer/>
           
         </div>
