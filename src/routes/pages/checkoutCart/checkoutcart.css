@@ -1,0 +1,22 @@
+.scrollCheckout{
+    height: 250px;
+    overflow-y: scroll;
+    border:1px solid rgba(0, 0, 0, 0.1);
+    padding:20px;
+}
+
+.scrollCheckout::-webkit-scrollbar {
+    width: 10px;            
+  }
+  
+  .scrollCheckout::-webkit-scrollbar-track {
+    background: #ebebeb;        
+    border-radius: 20px; 
+  }
+  
+  .scrollCheckout::-webkit-scrollbar-thumb {
+    background-color: #f48026;    
+    border-radius: 20px;       
+    border:2px solid  #ebebeb;
+  }
+
