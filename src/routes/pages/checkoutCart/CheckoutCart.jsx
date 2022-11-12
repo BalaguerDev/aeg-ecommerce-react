@@ -4,6 +4,10 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import './checkoutcart.css';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import PersonIcon from '@mui/icons-material/Person';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { Link } from "react-router-dom";
 
 
 export default function basket(props) {
@@ -25,12 +29,12 @@ export default function basket(props) {
           </div>
         </div>
 
-        <div className="row mt-5">
-          <div className="col w-25 col-md-4 col-sm-5 col-xs-12-col-12">
+        <div className="row mt-5 px-3">
+          <div className="col-md-4 col-sm-12 col-xs-12 col-12"  >
             <div className="row">
               <div className="col-xs-12 col-12">
-                <div className="row titleUser">
-                  <h6 className="col d-flex justify-content-between align-items-center">Tus datos</h6>
+                <div className="row titleUser  d-flex justify-content-between align-items-center">
+                  <h6 className="col"><PersonIcon />&nbsp; Tus datos</h6>
                   <button type="button" id="opc_show_login" className="col btn btn-sm btn-outline-dark btn-xs float-lg-right">
                     Iniciar Sesion
                   </button>
@@ -49,13 +53,13 @@ export default function basket(props) {
                 <input className="form-control form-control-sm my-2" type="text" placeholder="Email" aria-label="Email" />
               </div>
 
-              <div className="d-flex justify-content-between mt-5  border-top w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+              <div className="d-flex justify-content-between my-3  border-top w-100 collapseInfoEnvio" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
                 <h6 className="pt-1">Información de Envio</h6>
                 <ArrowCircleDownIcon className="pt-1" />
               </div>
               <div>
                 <div className="collapse collapse-horizontal" id="collapseWidthExample">
-                 
+
                   <div className="row">
                     <div id="field_customer_firstname" className="form-group col-xs-6 col-6 required has-success my-2">
                       {/* Form DNI */}
@@ -81,7 +85,7 @@ export default function basket(props) {
                       {/* Form Country */}
                       <input className="form-control form-control-sm" type="text" placeholder="País" aria-label="DNI" />
                     </div>
-                    
+
                     <div id="field_customer_firstname" className="form-group col-xs-6 col-6 required has-success my-2">
                       {/* Form ZipCode */}
                       <input className="form-control form-control-sm" type="number" placeholder="Codigo Postal" aria-label="ZipCode" />
@@ -99,20 +103,21 @@ export default function basket(props) {
                       <input className="form-control form-control-sm" type="text" placeholder="Empresa" aria-label="company" />
                     </div>
                   </div>
-                  
+
                 </div>
               </div>
             </form>
           </div>
-          <div className="col w-75 col-md-4 col-sm-5 col-xs-12-col-12 px-5">
+
+          <div className="col-md-8 col-sm-12 col-xs-12 col-12  my-1 ml-5 carrito">
             <div className="row">
               <div className="col-xs-12 col-12">
-                <div className="row titleUser">
-                  <h6 className="col d-flex justify-content-between align-items-center">Tu carrito</h6>
+                <div className="row titleUser  d-flex justify-content-between align-items-center">
+                  <h6 className="col"><LocalShippingIcon />&nbsp; Tu carrito</h6>
                 </div>
-                
 
-                <aside className="w-100 my-0">
+
+                <aside className="w-100 my-2 ">
 
                   <div className="scrollCheckout w-100">
                     {cartItems.length === 0 && <div>El carrito esta vacio</div>}
@@ -148,6 +153,8 @@ export default function basket(props) {
 
                     ))}
                   </div>
+                  Plazo de entrega)))))))))))))))))))
+                  Forma de envio ))))))))))))))))))))
                   {cartItems.length !== 0 && (
                     <>
                       <div className="row mt-3">
@@ -168,15 +175,16 @@ export default function basket(props) {
                         <div className="col-2">Precio Total</div>
                         <div className="col-1 d-flex justify-content-end"><strong>{totalPrice.toFixed(2)} €</strong></div>
                       </div>
-                      <div className="row my-2">
 
+                      <div className="d-grid gap-2 d-flex justify-content-between my-3">
+                        <Link to="/"className="btn btn-outline-dark btn-sm w-50" type="button"><ArrowBackIosNewIcon sx={{fontSize:"medium"}}/>&nbsp;Seguir Comprando</Link>
+                        <button className="btn btn-dark btn-sm w-50" type="button">Realizar Pago</button>
                       </div>
                     </>
                   )}
                 </aside>
-            
+
               </div>
-              
             </div>
           </div>
         </div>

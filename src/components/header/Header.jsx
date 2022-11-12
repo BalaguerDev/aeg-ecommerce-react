@@ -2,6 +2,7 @@ import { Badge } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './header.css';
 import Basket from "../basket/Basket";
+import { Link } from "react-router-dom";
 
 
 export default function Header(props) {
@@ -15,7 +16,7 @@ export default function Header(props) {
                 ENVIO <u>GRATUITO</u> POR COMPRAS MAYORES A 500€
                 <nav className="navbar navbar-expand-lg py-1 ">
                     <div className="container containerNav">
-                        <a href="#/" className="imgLogo"><img src="assets/logo-AEG.png" alt="logo AEG" ></img></a>
+                        <Link to="/" href="#/" className="imgLogo"><img src="assets/logo-AEG.png" alt="logo AEG" ></img></Link>
 
                         <button className="btn btn-outline-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>

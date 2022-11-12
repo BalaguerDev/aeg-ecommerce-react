@@ -1,9 +1,11 @@
 .scrollCheckout{
-    height: 250px;
+    height: 215px;
     overflow-y: scroll;
     border:1px solid rgba(0, 0, 0, 0.1);
     padding:20px;
+    margin-top: 10px;
 }
+
 
 .scrollCheckout::-webkit-scrollbar {
     width: 10px;            
