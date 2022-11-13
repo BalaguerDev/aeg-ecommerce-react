@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AddShoppingCart } from '@mui/icons-material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import accounting from "accounting";
 import './productCard.css';
 
@@ -56,12 +57,10 @@ export default function ProductCard(props) {
             (
               <>
                 {/* not added cart */}
-
+               
                 <div className="cardButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
-
-                  <AddShoppingCart className="" />{product.qty}Añadir al carrito
-
-
+                    <AddShoppingCart className="" />{product.qty}Añadir al carrito
+              
                 </div>
 
               </>
@@ -95,7 +94,7 @@ export default function ProductCard(props) {
                   <li> Rating: <strong>{product.rating}</strong></li><br />
                   <li> Stock: <strong>{product.stock}</strong></li><br />
                   <li> Precio: <strong>{accounting.formatMoney(product.price, { symbol: "€", format: "%v %s" })} </strong></li><br />
-                  <button className="btn btn-sm btn-outline-success" onClick={() => onAdd(product)} >AÑADIR AL CARRITO</button>
+                  
 
                 </ul>
 
