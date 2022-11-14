@@ -70,19 +70,9 @@ export default function Main(props) {
     return (
         <>
         <div>
-            <div className="heroWallpaper">
-                
-                <h1 className="heroTitle">TU TIENDA DE CONFIANZA AEG</h1>
-                <h3 className="heroSubTitle">LAS MEJORES HERRAMIENTAS PARA EL PROFESIONAL</h3>
-                <h5 className="newsletter">REGISTRATE EN NUESTRA NEWSLETTER Y ENTRA EN EL SORTEO DE UN MARTILLO COMBINADO 18V SIN ESCOBILLAS</h5>
-                <button className="btn btn-light btn-lg btnNews">NEWSLETTER</button>
-            </div>
-       
+            <div className="container my-5 py-5">
                 <div className="row">
-            <div className="container m-2">
-    
-                    <div className="col-12 mb-5 my-3">
-
+                    <div className="col-12 mb-5">
                         <h1 className="display-6 fw-bolder text-center">Últimos productos</h1>
                         <hr />
                     </div>
