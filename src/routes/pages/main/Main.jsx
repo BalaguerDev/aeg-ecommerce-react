@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import React, {useEffect,useState } from 'react'
 import {apiConnect} from "../../../api/Api";
+import Hero from "../../../components/hero/Hero";
 import ProductCard from "../../../components/productCard/ProductCard"
 
 
@@ -70,10 +71,11 @@ export default function Main(props) {
     return (
         <>
         <div>
+            <Hero/>
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-12 mb-5">
-                        <h1 className="display-6 fw-bolder text-center">Últimos productos</h1>
+                        <h1 className="display-6 fw-bolder text-center mt-5 pt-5">Últimos productos</h1>
                         <hr />
                     </div>
                 </div>
