@@ -38,25 +38,34 @@ export default function Main(props) {
     
         return (
             <>
-                <div className="buttonsType d-flex justify-content-around mb-5 pb-5">
-                    <button className="me-2 type1" onClick={()=> setFilterData(allData)}>TODAS LAS HERRAMIENTAS</button>
+                        
+                    <Grid container spacing={1} padding={1} className="w-100">
+                        <div className="buttonsType mb-2 pb-2 w-100">
+                            <button className="type1 col-xs-12 col-md-4 col-lg-2 m-1" onClick={()=> setFilterData(allData)}>TODAS LAS HERRAMIENTAS</button>
 
-                    <button className="me-2 type2" onClick={()=> filterResult("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
+                            <button className=" type2 col-xs-12 col-md-4 col-lg-2 m-1" onClick={()=> filterResult("Perforación y Demolición")}>PERFORACIÓN Y DEMOLICIÓN</button>
 
-                    <button className="me-2 type3" onClick={()=> filterResult("Fijación")}>HERRAMIENTAS DE IMPACTO</button>
+                            <button className="type3 col-xs-12 col-md-4 col-lg-2 m-1" onClick={()=> filterResult("Fijación")}>HERRAMIENTAS DE IMPACTO</button>
 
-                    <button className="me-2 type4" onClick={()=> filterResult("Herramientas madera")}>HERRAMIENTAS PARA MADERA</button>
+                            <button className="type4 col-xs-12 col-md-4 col-lg-2 m-1" onClick={()=> filterResult("Herramientas madera")}>HERRAMIENTAS PARA MADERA</button>
 
-                    <button className="me-2 type5" onClick={()=> filterResult("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
+                            <button className="type5 col-xs-12 col-md-4 col-lg-2 m-1" onClick={()=> filterResult("Herramientas metal")}>HERRAMIENTAS PARA METAL</button>
 
-                </div>
+                        </div>
+                    </Grid>
+          
+
+
+
+
+
 
                 <Grid container spacing={2} padding={2}>
                     {filterData.map((product) => {
                         
                         return (
                             
-                                <Grid key={product.id} item xs={6} sm={4} md={3} lg={2}>
+                                <Grid key={product.id} item xs={12} sm={6} md={4} lg={2}>
                                     <ProductCard product={product} item={cartItems.find((x) => x.id === product.id)} onAdd={onAdd} onRemove={onRemove}/>
                                 </Grid>
                             

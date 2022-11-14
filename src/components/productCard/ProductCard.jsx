@@ -23,7 +23,7 @@ export default function ProductCard(props) {
 
           {/* name product */}
           <div className="cardHeader">
-            <p className="text-center">{product.name}</p>
+            <p className="text-center">{product.name}- Stock: {product.stock}</p>
           </div>
 
           {/* title product */}
