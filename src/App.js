@@ -7,6 +7,8 @@ import dataProduct from "./assets/db/db"
 import { useEffect, useState } from 'react';
 import Footer from './components/footer/Footer';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Register from './routes/pages/register/Register';
+import { Login } from '@mui/icons-material';
 
 
 function App() {
@@ -14,13 +16,17 @@ function App() {
 
   const {products} = dataProduct;
 
-  
+
+
+
 
   const onAdd = (product) =>{
     const exist = cartItems.find((x) => x.id === product.id);
     if(exist){
       const newCartItems = cartItems.map ((x) =>
-      x.id === product.id ? {...exist, qty: exist.qty +1} : x
+      x.id === product.id ? {...exist, qty: exist.qty + 1 }: x
+
+
       );
 
       setCartItems(newCartItems);
@@ -46,6 +52,7 @@ function App() {
       localStorage.setItem("cartItems", JSON.stringify(newCartItems));
     }
   }
+  
     
 
   const onDelete = (product) => {
@@ -79,9 +86,14 @@ function App() {
         
             <Routes>
 
-            <Route path="/pedido" element={<CheckoutCart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} products={products}/>} />
+            <Route path="/pedido" element={<CheckoutCart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} products={products} />} />
               
               <Route path="/" element={<Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>} />
+
+              <Route path="/registro" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+
+
               
             </Routes>
 

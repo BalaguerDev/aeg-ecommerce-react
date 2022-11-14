@@ -60,16 +60,22 @@
         color: #f48026;
         }
 
+.buttonsType{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .type1, .type2, .type3, .type4, .type5{
     border: none;
     width: 250px;
-    height: 200px;
+    height: 100px;
     background-position: center;
     background-attachment: local;
     background-repeat: no-repeat;
     background-size: cover;
     color:white;
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 700;
     filter: grayscale(100%);
     border-radius: 25px;

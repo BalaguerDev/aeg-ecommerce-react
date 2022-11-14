@@ -8,7 +8,7 @@ import './productCard.css';
 
 export default function ProductCard(props) {
 
-  const { item, product, onAdd} = props;
+  const { item, product, onAdd, onOutOfStock} = props;
 
 
  
@@ -23,7 +23,7 @@ export default function ProductCard(props) {
 
           {/* name product */}
           <div className="cardHeader">
-            <p className="text-center">{product.name}- Stock: {product.stock}</p>
+            <p className="text-center">{product.name} - Stock: {product.stock}</p>
           </div>
 
           {/* title product */}
@@ -45,7 +45,7 @@ export default function ProductCard(props) {
 
           {/* added cart */}
           {item ? (
-            <div className="activeButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
+            <div className="activeButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product,onOutOfStock())} >
 
               <ShoppingCartIcon className="" />Añadir 1 más
 
@@ -57,7 +57,7 @@ export default function ProductCard(props) {
               <>
                 {/* not added cart */}
 
-                <div className="cardButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product)} >
+                <div className="cardButton btn btn-sm d-flex justify-content-around align-items-center" onClick={() => onAdd(product,onOutOfStock)} >
 
                   <AddShoppingCart className="" />{product.qty}Añadir al carrito
 
@@ -95,7 +95,7 @@ export default function ProductCard(props) {
                   <li> Rating: <strong>{product.rating}</strong></li><br />
                   <li> Stock: <strong>{product.stock}</strong></li><br />
                   <li> Precio: <strong>{accounting.formatMoney(product.price, { symbol: "€", format: "%v %s" })} </strong></li><br />
-                  <button className="btn btn-sm btn-outline-success" onClick={() => onAdd(product)} >AÑADIR AL CARRITO</button>
+                  <button className="btn btn-sm btn-outline-success" onClick={() => onAdd(product,onOutOfStock())} >AÑADIR AL CARRITO</button>
 
                 </ul>
 

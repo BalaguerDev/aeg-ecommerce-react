@@ -22,9 +22,9 @@ export default function Basket(props) {
             <h3 className="text-center mb-4">Carrito</h3>
             <div className="scrollElement">
                 {cartItems.length === 0 && <div>El carrito esta vacio</div>}
-                {cartItems.map((item) => (
+                {cartItems.map((item, indice) => (
 
-                    <div key={item.id}>
+                    <div key={indice}>
                         <div className="row itemDivCart row align-items-center">
                             <div className="col">
                                 <img src={item.img} alt={item.name} className="img-fluid" data-bs-toggle="modal" data-bs-target={"#product" + item.id} />

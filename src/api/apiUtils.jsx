@@ -1,7 +1,0 @@
-
-
-
-function baseUrl(){
-const url=""
-
-}
