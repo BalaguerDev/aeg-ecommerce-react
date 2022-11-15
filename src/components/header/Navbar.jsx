@@ -54,6 +54,7 @@ export default function Navbar(props) {
 
 
                 {/* USER PROFILE */}
+                
                 <div className="dropdown">
                   <button className="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://mdbootstrap.com/img/Photos/Avatars/img (27).jpg" className="rounded-circle" height="22"

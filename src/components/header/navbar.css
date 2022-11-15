@@ -26,3 +26,17 @@ li, a{
     font-weight: 500;
     font-size: 1rem;
 }
+
+a.nav-link{
+    color: white;
+}a.nav-link:hover{
+    color: black;
+    text-decoration: underline;
+    transition: 0.4s;
+}
+
+a.sidenav-link:hover{
+    color: #f48026;
+    text-decoration: underline;
+    transition: 0.4s;
+}
