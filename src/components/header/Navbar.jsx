@@ -19,7 +19,7 @@ export default function Navbar(props) {
 
   return (
     <>
-      <header className="">
+      <header className="fixed-top">
         <div className="p-3 text-center border-bottom navBar">
           <div className="container">
             <div className="row">
