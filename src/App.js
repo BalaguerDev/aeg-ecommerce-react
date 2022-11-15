@@ -1,5 +1,5 @@
 import './app.css';
-import Header from './components/header/Header';
+import Navbar from './components/header/Navbar';
 import Main from './routes/pages/main/Main';
 import CheckoutCart from './routes/pages/checkoutCart/CheckoutCart';
 
@@ -9,7 +9,7 @@ import Footer from './components/footer/Footer';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Register from './routes/pages/register/Register';
 import { Login } from '@mui/icons-material';
-import Navbar from './components/header/Navbar';
+
 
 
 function App() {
