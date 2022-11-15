@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+  }
+
+.navBar{
+  background: #f48026;
+}
+
+/* user */
+.wishlist{
+  cursor: pointer;
+
+} .wishlist:active{
+    background-color: #f48026;
+  }
+
+li, a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    cursor: pointer;
+}
+
+.titleSideNav{
+    font-weight: 500;
+    font-size: 1rem;
+}

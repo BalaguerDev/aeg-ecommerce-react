@@ -9,6 +9,7 @@ import Footer from './components/footer/Footer';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Register from './routes/pages/register/Register';
 import { Login } from '@mui/icons-material';
+import Navbar from './components/header/Navbar';
 
 
 function App() {
@@ -82,7 +83,7 @@ function App() {
       <Router>
         
         <div className="App">
-          <Header cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} countCartItems={cartItems.length}/>
+          <Navbar cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} countCartItems={cartItems.length}/>
         
             <Routes>
 
