@@ -24,7 +24,7 @@ export default function Navbar(props) {
           <div className="container">
             <div className="row">
               <div className="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
-                <Link to="/" className="ms-md-2"><img src="assets/logo-AEG.png" height="35" /></Link>
+                <Link to="/" className="ms-md-2"><img src="assets/logo-AEG.png" height="35" alt="logoAEG"/></Link>
               </div>
 
 
@@ -41,7 +41,7 @@ export default function Navbar(props) {
 
               {/* CART ICON */}
               <div className="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
-                <button className="btn text-reset me-3 btnNav" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                <button className="btn btnCartUser" type="" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                   <ShoppingCartIcon className="text-white" />
                   {countCartItems ? (
                     <Badge badgeContent={countCartItems} color="success">
@@ -57,7 +57,7 @@ export default function Navbar(props) {
                 {/* USER PROFILE */}
                 
                 <div className="dropdown">
-                  <button className="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button className="btn btnCartUser" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://mdbootstrap.com/img/Photos/Avatars/img (27).jpg" className="rounded-circle" height="22"
                       alt="" loading="lazy" />
                   </button>

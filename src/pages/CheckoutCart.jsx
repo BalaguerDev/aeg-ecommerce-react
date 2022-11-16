@@ -35,9 +35,9 @@ export default function basket(props) {
               <div className="col-xs-12 col-12">
                 <div className="row titleUser  d-flex justify-content-between align-items-center">
                   <h6 className="col"><PersonIcon />&nbsp; Tus datos</h6>
-                  <button type="button" id="opc_show_login" className="col btn btn-sm btn-outline-dark btn-xs float-lg-right">
+                  <Link to="/login" type="button" id="opc_show_login" className="col btn btn-sm btn-outline-dark btn-xs float-lg-right">
                     Iniciar Sesion
-                  </button>
+                  </Link>
                   <hr className="my-3" />
                 </div>
               </div>

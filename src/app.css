@@ -84,6 +84,12 @@
           text-decoration: underline;
           transition: 0.4s;
         }
+        .btnCartUser{
+          box-shadow: none;
+        }.btnCartUser:hover{
+          box-shadow: none;
+
+        }
 /* NAVBAR */
 
 
@@ -300,18 +306,37 @@
         }
 /* CHECKOUTCART */
 
-/* REGISTER */
-        .card-registration .select-input.form-control[readonly]:not([disabled]) {
-          font-size: 1rem;
-          line-height: 2.15;
-          padding-left: .75em;
-          padding-right: .75em;
-          background: url("../public/assets/hero/hero1.png");
+
+
+/* LOGIN */
+        .containerLogin{
+          background-color: #272829;
         }
-        .card-registration .select-arrow {
-          top: 13px;
+        .logoTitle{
+          width: 200px;
+          margin:0 auto;
         }
-        .img-fluid {
-          width: 100%;
+        .textRegister{
+          color: #f48026;
+        } .textRegister:hover{
+            color: #272829;
+          }
+        .buttonLogin{
+          background-color: #f48026;
+        }.buttonLogin:hover{
+          background-color: #272829;
         }
-/* REGISTER */
+        .label-alert{
+          color:red;
+          font-size: 14px;
+          background: rgb(255, 222, 222);
+          width: fit-content;
+          height: fit-content;
+          padding: 0 5px;
+          box-sizing: border-box;
+          border-radius: 5px;
+          margin-bottom: 10px;
+
+
+        }
+/* LOGIN */
