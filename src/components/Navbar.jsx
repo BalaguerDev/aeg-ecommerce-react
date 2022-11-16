@@ -42,9 +42,10 @@ export default function Navbar(props) {
               {/* CART ICON */}
               <div className="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
                 <button className="btn text-reset me-3 btnNav" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                  <ShoppingCartIcon className="text-white" />
                   {countCartItems ? (
                     <Badge badgeContent={countCartItems} color="success">
-                      <ShoppingCartIcon className="text-white" />
+
                     </Badge>) : ("")}
                 </button>
                 <ul className="dropdown-menu">
@@ -61,9 +62,9 @@ export default function Navbar(props) {
                       alt="" loading="lazy" />
                   </button>
                   <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a className="dropdown-item" href="#">Perfil</a></li>
-                    <li><a className="dropdown-item wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal">Lista de deseos</a></li>
-                    <li><a className="dropdown-item" href="#">Logout</a></li>
+                    <li><a className="dropdown-item" href="#/">Perfil</a></li>
+                    <li><a className="dropdown-item" href="#/">Lista de deseos</a></li>
+                    <li><a className="dropdown-item" href="#/">Logout</a></li>
                   </ul>
                 </div>
               </div>
@@ -100,16 +101,16 @@ export default function Navbar(props) {
                 <a className="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><MenuIcon/>&nbsp;Productos</a>
               </li>
               <li className="nav-item me-2 me-lg-0 d-none d-md-inline-block menuItem">
-                <a className="nav-link" href="#">Gremio</a>
+                <a className="nav-link" href="#/">Gremio</a>
               </li>
               <li className="nav-item me-2 me-lg-0 d-none d-md-inline-block menuItem">
-                <a className="nav-link" href="#">Tecnologia</a>
+                <a className="nav-link" href="#/">Tecnologia</a>
               </li>
               <li className="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-                <a className="nav-link" href="#">Servicio</a>
+                <a className="nav-link" href="#/">Servicio</a>
               </li>
               <li className="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-                <a className="nav-link" href="#">Sobre AEG</a>
+                <a className="nav-link" href="#/">Sobre AEG</a>
               </li>
             </ul>
 
@@ -133,16 +134,16 @@ export default function Navbar(props) {
                   <div className="collapse" id="collapseCategories">
                       <ul className="sidenav-collapse">
                         <li className="sidenav-item">
-                          <a className="sidenav-link">Perforación y Demolición</a>
+                          <a className="sidenav-link" href="#/">Perforación y Demolición</a>
                         </li>
                         <li className="sidenav-item">
-                          <a className="sidenav-link">Fijación</a>
+                          <a className="sidenav-link" href="#/">Fijación</a>
                         </li>
                         <li className="sidenav-item">
-                          <a className="sidenav-link">Herramientas para la Madera</a>
+                          <a className="sidenav-link" href="#/">Herramientas para la Madera</a>
                         </li>
                         <li className="sidenav-item">
-                          <a className="sidenav-link">Herramientas para el Metak</a>
+                          <a className="sidenav-link" href="#/">Herramientas para el Metak</a>
                         </li>
                       </ul>
                     </div>
@@ -155,13 +156,13 @@ export default function Navbar(props) {
                     <div className="collapse" id="collapseGroup">
                       <ul className="sidenav-collapse">
                         <li className="sidenav-item">
-                          <a className="sidenav-link">Milwaukee</a>
+                          <a className="sidenav-link" href="#/">Milwaukee</a>
                         </li>
                         <li className="sidenav-item">
-                          <a className="sidenav-link">AEG</a>
+                          <a className="sidenav-link" href="#/">AEG</a>
                         </li>
                         <li className="sidenav-item">
-                          <a className="sidenav-link">Rioby</a>
+                          <a className="sidenav-link" href="#/">Rioby</a>
                         </li>
                       </ul>
                     </div>
@@ -171,16 +172,16 @@ export default function Navbar(props) {
 
                   {/* CONTACTO */}
                   <li className="sidenav-item my-3">
-                    <a className="sidenav-link titleSideNav"><PhoneIcon/>&nbsp;&nbsp;Contacto</a>
+                    <a className="sidenav-link titleSideNav" href="#/"><PhoneIcon/>&nbsp;&nbsp;Contacto</a>
                   </li>
 
                   
                   {/* OFERTA DEL MES */}
                   <li className="sidenav-item my-3">
-                    <a className="sidenav-link titleSideNav"><DiscountIcon/>&nbsp;&nbsp; OFERTA DEL MES</a>
+                    <a className="sidenav-link titleSideNav" href="#/"><DiscountIcon/>&nbsp;&nbsp; OFERTA DEL MES</a>
                     <div className="card mx-3 my-4">
                       <div className="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                        <img src="https://res.cloudinary.com/drghk9p6q/image/upload/v1668073630/product-img/BSB_18BLLI-602C_kdqqwq.jpg"
+                        <img src="https://res.cloudinary.com/drghk9p6q/image/upload/v1668073630/product-img/BSB_18BLLI-602C_kdqqwq.jpg" alt="productOffer"
                           className="w-100" />
                         <a href="#!">
                           <div className="mask">
@@ -191,7 +192,7 @@ export default function Navbar(props) {
                         </a>
                       </div>
                       <div className="card-body">
-                        <a href="" className="text-center">
+                        <a href="/#" className="text-center">
                           <p className="mb-2">Taladro de percusión sin escobillas de 18V</p>
                         </a>
                         <p className="mb-0">
