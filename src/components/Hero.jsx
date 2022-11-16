@@ -1,4 +1,4 @@
-import './hero.css';
+import '../app.css';
 
 export default function Hero() {
 

@@ -2,7 +2,7 @@ import accounting from "accounting";
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import './basket.css';
+import '../app.css';
 import { Link } from "react-router-dom";
 
 export default function Basket(props) {

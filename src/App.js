@@ -1,13 +1,13 @@
 import './app.css';
-import Navbar from './components/header/Navbar';
-import Main from './routes/pages/main/Main';
-import CheckoutCart from './routes/pages/checkoutCart/CheckoutCart';
+import Navbar from './components/Navbar';
+import Main from './pages/Main';
+import CheckoutCart from './pages/CheckoutCart';
 
 import dataProduct from "./assets/db/db"
 import { useEffect, useState } from 'react';
-import Footer from './components/footer/Footer';
+import Footer from './components/Footer';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Register from './routes/pages/register/Register';
+import Register from './pages/Register';
 import { Login } from '@mui/icons-material';
 
 

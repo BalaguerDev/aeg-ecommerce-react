@@ -1,4 +1,4 @@
-import './wishlist.css';
+import '../app.css';
 
 import React from 'react'
 import WishListItem from './WishListItem';

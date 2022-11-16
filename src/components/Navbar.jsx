@@ -1,7 +1,7 @@
 
-import './navbar.css';
+import '../app.css';
 import { Link } from 'react-router-dom';
-import Basket from "../basket/Basket";
+import Basket from "./Basket";
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from "@mui/material";

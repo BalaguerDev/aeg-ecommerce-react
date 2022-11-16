@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
 import React, {useEffect,useState } from 'react'
-import {apiConnect} from "../../../api/Api";
-import Hero from "../../../components/hero/Hero";
-import ProductCard from "../../../components/productCard/ProductCard"
+import {apiConnect} from "../api/Api";
+import Hero from "../components/Hero";
+import ProductCard from "../components/ProductCard"
 
 
 export default function Main(props) {

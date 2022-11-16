@@ -2,7 +2,7 @@ import accounting from "accounting";
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import './checkoutcart.css';
+import '../app.css';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import PersonIcon from '@mui/icons-material/Person';

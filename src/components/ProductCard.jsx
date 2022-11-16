@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AddShoppingCart } from '@mui/icons-material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import accounting from "accounting";
-import './productCard.css';
+import '../app.css';
 
 
 
