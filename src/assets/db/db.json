@@ -165,5 +165,29 @@
             "rating": 5,
             "stock":4
           }
+    ],
+    "users": [
+            {
+              "id": 1,
+              "username": "balaguer",
+              "password": "br000000",
+              "nombre": "BalaguerDev",
+              "nif": "47590165z",
+              "direccion": "Pujades 19, 5º 1ª",
+              "pais": "España",
+              "zipCode": "08018",
+              "empresa": "Assembler"
+            },
+            {
+              "id": 1,
+              "username": "assembler",
+              "password": "br000000",
+              "nombre": "BalaguerDev",
+              "nif": "47590165z",
+              "direccion": "Av. Josep Tarradellas 24, 6º",
+              "pais": "España",
+              "zipCode": "08003",
+              "empresa": "Racc"
+            }
     ]
 }
