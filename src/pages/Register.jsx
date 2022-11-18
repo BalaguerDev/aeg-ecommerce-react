@@ -1,58 +1,46 @@
-import { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import '../app.css';
 import { Col, Row, Container, Card, Form } from "react-bootstrap";
-
-const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
-const PASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]){8,24}$/;
-
-
-const Register = () => {
-    const userRef = useRef();
-    const errorRef = useRef();
-
-    const [user, setuser] = useState("");
-    const [validName, setValidName] = useState(false);
-    const [userFocus, setUserFocus] = useState(false);
-
-    const [pwd, setpwd] = useState("");
-    const [validPwd, setValidPwd] = useState(false);
-    const [pwdFocus, setPwdFocus] = useState(false);
-
-    const [matchPwd, setMatchPwd] = useState("");
-    const [validMatch, setValidMatch] = useState(false);
-    const [MatchFocus, setMatchFocus] = useState(false);
-
-    const [errMsg, setErrMsg] = useState("");
-    const [success, setSuccess] = useState(false);
+import {apiConnect} from "../api/Api";
+import AddUser from "../api/AddUsers"
+import { Navigate } from 'react-router-dom';
 
 
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
+function Register() {
 
-    useEffect(() => {
-        const result = USER_REGEX.test(user);
-        console.log(result)
-        console.log(user)
-        setValidName(result)
-    }, [user])
+    const [success, setSuccess] = useState(false)
 
-    useEffect(() => {
-        const result = USER_REGEX.test(pwd);
-        console.log(result)
-        console.log(pwd)
-        setValidPwd(result);
-        const match = pwd === matchPwd;
-        setValidMatch(match)
-    }, [pwd, matchPwd])
+    const [formUser, setFormUser] = useState({
+        id : "",
+        username : "",
+        password : "",
+        confirmPassword : "",
+        empresa : "",
+        cif : "",
+        email : "",
+        direccion : "",
+        localidad : "",
+        cp : "",
+    })
 
-    useEffect(() => {
-        setErrMsg("");
-    }, [user, pwd, matchPwd])
 
+    const handleChange = ({target}) => {
+        const newFormUser = {...formUser}
+        newFormUser [ target.name ] = target.value
+        setFormUser(prev => prev = newFormUser)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        await AddUser(formUser)
+        setSuccess(true)
+    }
 
     return (
-        <section>
-        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+        <>
+        {success && <Navigate to ="/"/> }
+
+        <div className="mt-5 pt-5 containerLogin">
             <Container >
                 <Row className="vh-100 d-flex justify-content-center align-items-center">
                     <Col md={8} lg={6} xs={12}>
@@ -60,46 +48,62 @@ const Register = () => {
                             <Card.Body>
                                 <div className="mb-3 mt-md-4 text-center">
                                     <img src="../assets/logo-AEGcolor.png" alt="logoAEG" className="logoTitle" />
-                                    <p className=" mb-5">Login</p>
+                                    <p className=" mb-5">Register</p>
                                     <div className="mb-3">
-                                        {errorLogin &&
-                                            <label className="label-alert mb-3">
-                                                Usuario o contraseña incorrectos
-                                            </label>
-                                        }
 
-                                        {/* input user */}
-                                        <input id="usuario" name="usuario" placeholder="Email" type="text" onChange={(e) => handleChange(e.target.name, e.target.value)} className="mb-3 form-control" />
+                                        <form onSubmit={handleSubmit}>
 
-                                        {/* input password */}
-                                        <input id="contraseña" name="contraseña" placeholder="password" type="password" onChange={(e) => handleChange(e.target.password, e.target.value)} param={passwordError} className="mb-3 form-control" />
+                                            <div className="username">
+                                                <input className="mb-3 form-control" type="text" id="username" name="username" placeholder="Username" value={formUser.username} onChange = {handleChange} required/>
+                                            </div>
+
+                                            <div className="row">
+                                                <div className="password col">
+                                                    <input className="mb-3 form-control" type="password" id="password" name="password" placeholder="Password" value={formUser.password} onChange = {handleChange} required/>
+                                                </div>
+                                                <div className="confirm-password col">
+                                                    <input className="mb-3 form-control" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" value={formUser.confirmPassword} onChange = {handleChange} required/>
+                                                </div>
+                                            </div>
+
+                                            <hr />
+                                            <br />
+                                            <div className="row">
+                                                <div className="empresa col">
+                                                    <input className="mb-3 form-control" type="empresa" id="empresa" name="empresa" placeholder="Empresa" value={formUser.empresa} onChange = {handleChange} required/>
+                                                </div>
+                                                <div className="cif col">
+                                                    <input className="mb-3 form-control" type="text" name="cif" id="cif" placeholder="CIF" value={formUser.cif} onChange = {handleChange} required/>
+                                                </div>
+                                            </div>
+
+                                            <div className="email">
+                                                <input type="email" id="email" name="email" className="mb-3 form-control" placeholder="Email" value={formUser.email} onChange = {handleChange} required/>
+                                            </div>
+
+                                            <div className="direccion">
+                                                <input type="text" id="direccion" className="mb-3 form-control" name="direccion" placeholder="Dirección" value={formUser.direccion} onChange = {handleChange} required/>
+                                            </div>
+
+                                            <div className="row">
+                                                <div className="localidad col">
+                                                    <input className="mb-3 form-control" type="text" id="localidad" name="localidad" placeholder="Localidad" value={formUser.localidad} onChange = {handleChange} required/>
+                                                </div>
+                                                <div className="cp col">
+                                                    <input className="mb-5 form-control" name="cp" type="text" id="cp" placeholder="Codigo Postal" value={formUser.cp} onChange = {handleChange} required/>
+                                                </div>
+                                            </div>
 
 
 
-                                        <Form.Group
-                                            className="mb-3"
-                                            controlId="formBasicCheckbox"
-                                        >
-                                            <p className="small">
-                                                <a className="textRegister" href="#!">
-                                                    Has olvidado tu contraseña?
-                                                </a>
-                                            </p>
-                                        </Form.Group>
-                                        <div className="d-grid">
+                                            
+                                            <div className="d-grid">
 
-                                            <button onClick={handleSubmit} className="buttonLogin">Login</button>
+                                            <input type="submit" className="btn buttonLogin" value="Register"/>
 
-                                        </div>
+                                            </div>
 
-                                        <div className="mt-3">
-                                            <p className="mb-0  text-center">
-                                                No tienes cuenta{" "}
-                                                <a href="{''}" className="textRegister fw-bold">
-                                                    Registrate
-                                                </a>
-                                            </p>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </Card.Body>
@@ -107,8 +111,8 @@ const Register = () => {
                     </Col>
                 </Row>
             </Container>
-        </section>
+        </div>
+        </>
     )
 }
-
-export default Register
+export default Register;
