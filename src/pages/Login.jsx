@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Col, Row, Container, Card, Form } from "react-bootstrap";
 import '../app.css';
-import { Navigate, withRouter } from 'react-router-dom';
+import { Link, Navigate, withRouter } from 'react-router-dom';
 
 
 
@@ -107,9 +107,9 @@ export default function Login() {
                     <div className="mt-3">
                       <p className="mb-0  text-center">
                         No tienes cuenta{" "}
-                        <a href="{''}" className="textRegister fw-bold">
+                        <Link to="/register" className="textRegister fw-bold">
                           Registrate
-                        </a>
+                        </Link>
                       </p>
                     </div>
                   </div>
