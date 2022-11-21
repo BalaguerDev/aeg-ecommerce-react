@@ -79,16 +79,17 @@ export default function Login() {
                           Usuario o contraseña incorrectos
                         </label>
                       }
-                    
-                      {/* input user */}
-                      <input id="usuario" name="usuario" placeholder="Email" type="text" onChange={ (e) => handleChange(e.target.name, e.target.value)} className="mb-3 form-control"/>
+                      
+                    <div className="login-wrapper">
+                      <form action="">
+                        {/* input user */}
+                      <input id="usuario" name="usuario" placeholder="Username" type="text" onChange={ (e) => handleChange(e.target.name, e.target.value)} className="mb-3 form-control"/>
                         
-                      {/* input password */}
-                      <input  id="contraseña" name="contraseña" placeholder="password" type="password" onChange={ (e) => handleChange(e.target.password, e.target.value)} param={passwordError} className="mb-3 form-control"/>
+                        {/* input password */}
+                        <input  id="contraseña" name="contraseña" placeholder="Password" type="password" onChange={ (e) => handleChange(e.target.password, e.target.value)} param={passwordError} className="mb-3 form-control"/>
+  
 
-                    
-
-                      <Form.Group
+                        <Form.Group
                         className="mb-3"
                         controlId="formBasicCheckbox"
                       >
@@ -103,6 +104,12 @@ export default function Login() {
                         <button onClick={handleSubmit} className="buttonLogin">Login</button>
                         
                       </div>
+                      </form>
+                    </div>
+                      
+                    
+
+                      
                     
                     <div className="mt-3">
                       <p className="mb-0  text-center">

@@ -13,10 +13,10 @@ import Register from './pages/Register';
 
 
 function App() {
+
   const [cartItems, setCartItems] = useState([]);
 
   const {products} = dataProduct;
-
 
 
 

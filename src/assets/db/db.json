@@ -177,6 +177,18 @@
       "direccion": "Pujades 19, 5º 1ª",
       "pais": "España",
       "zipCode": "08018"
+    },
+    {
+      "id": "04d809f7-7cc9-4a0a-a468-0b9fcb0dac64",
+      "username": "Sencor",
+      "password": "Sencor2022",
+      "confirmPassword": "Sencor2022",
+      "empresa": "Sencor",
+      "cif": "46378293E",
+      "email": "sencormanresa@gmail.com",
+      "direccion": " Polígon Ind, Carrer Castellfollit, Av. dels Dolors, 13",
+      "localidad": "Manresa",
+      "cp": "08243"
     }
   ]
 }

@@ -11,6 +11,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import AppsIcon from '@mui/icons-material/Apps';
 import DiscountIcon from '@mui/icons-material/Discount';
 import MenuIcon from '@mui/icons-material/Menu';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 
 
 export default function Navbar(props) {
@@ -54,19 +55,31 @@ export default function Navbar(props) {
 
 
 
-                {/* USER PROFILE */}
+                {/* /REGISTER / LOGIN / USER PROFILE  */}
+
+                <Link to="/login" type="button" id="opc_show_login" className="btn btn-sm btn-dark">
+                <HowToRegIcon fontSize='small'/>Inicio sesión
+                  </Link>
+
+
+
+             
+
+
                 
-                <div className="dropdown">
-                  <button className="btn btnCartUser" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {/* <div className="dropdown">
+                  <button className="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://mdbootstrap.com/img/Photos/Avatars/img (27).jpg" className="rounded-circle" height="22"
                       alt="" loading="lazy" />
+                      
                   </button>
+                  
                   <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                     <li><a className="dropdown-item" href="#/">Perfil</a></li>
                     <li><a className="dropdown-item" href="#/">Lista de deseos</a></li>
                     <li><a className="dropdown-item" href="#/">Logout</a></li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
