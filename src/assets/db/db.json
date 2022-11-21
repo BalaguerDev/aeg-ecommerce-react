@@ -168,17 +168,6 @@
   ],
   "users": [
     {
-      "id": 1,
-      "username": "balaguer",
-      "password": "br000000",
-      "empresa": "BalaguerDev",
-      "email": "info@info.com",
-      "nif": "47590165z",
-      "direccion": "Pujades 19, 5º 1ª",
-      "pais": "España",
-      "zipCode": "08018"
-    },
-    {
       "id": "04d809f7-7cc9-4a0a-a468-0b9fcb0dac64",
       "username": "Sencor",
       "password": "Sencor2022",

@@ -1,70 +1,57 @@
-import { useState } from "react";
+
 import { Col, Row, Container, Card, Form } from "react-bootstrap";
 import '../app.css';
-import { Link, Navigate, withRouter } from 'react-router-dom';
+import loginUsers from "../api/LoginUsers";
 
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
 
 
 
 export default function Login() {
-  const [ user, setUser ] = useState("");
-  const [ password, setPassword ] = useState("");
-  const [ passwordError, setPasswordError ] = useState(false)
-  const [ isLogin, setIsLogin ] = useState(false);
-  const [ errorLogin, setErrorLogin] = useState(false)
+      // Gathering the existing users in the system
+      const [existingUsers, setExistingUsers] = useState([])
 
+      useEffect(() => {
+          const retrieveUsers = async() => {
+              const users = await fetchUsers();
+              setExistingUsers(users)
+          }
+          retrieveUsers();
+      }, [])
+  
+      // Manage of values by "useFormController()" <-- custom hook
+      const { form, changeValue } = useFormController()
+  
+      // Manage inputs validation state
+      const validUsername = form.username.length > 0 ? true : false;
+      const validPwd = form.password.length > 5 ? true : false;
+  
+      const inputCheck = (a, b) => {
+          const ok = (a && b) ? true : false;
+          return ok;
+      };
+  
+      const usernameState      = validUsername ? "form-control is-valid" : "form-control is-invalid"
+      const pwdState           = validPwd ? "form-control is-valid" : "form-control is-invalid"
+      const btnState           = inputCheck(validUsername, validPwd) ? "btn btn-outline-success col-8" : "btn btn-outline-warning col-8";
+      const enableSubmit       = inputCheck(validUsername, validPwd) ? "" : "disabled";
+      const invalidMsgUsername = form.username === "" ? "d-none" : "invalid-feedback"; 
+      const invalidMsgPwd      = form.password === "" ? "d-none" : "invalid-feedback"; 
+  
+      // Submit functions
+      const dispatch = useDispatch();
+  
+      const [sendProfile, setSendProfile] = useState(null)
+      useEffect(()=>{
+          setSendProfile(prev => prev = null)
+      }, [sendProfile])
 
-  function handleChange(name,value) {
-    if(name === "usuario"){
-      setUser(value)
-      setErrorLogin(false);
-    } else {
-      if (value.length < 6){
-        setPasswordError(true)
-        setErrorLogin(false);
-        
-      } else {
-        setPasswordError(false)
-        setPassword(value)
-        setErrorLogin(false);
-      }
-    }
-  };
-
-  function ifMatch(param) {
-    if(param.user.length > 0 && param.password.length > 0){
-      if(param.user === "balaguer" && param.password === "123456"){
-        const { user, password } = param;
-        let accountUser = {user, password};
-        let account = JSON.stringify(accountUser);
-        localStorage.setItem("account" , account);
-        setIsLogin(true)
-      } else {
-        setIsLogin(false);
-        setErrorLogin(true)
-      }
-    } else {
-      setIsLogin(false);
-      setErrorLogin(true)
-    }
-  }
-
-  function handleSubmit() {
-    let account = { user, password }
-    if (account){
-      ifMatch(account)
-    }
-  };
-
-  console.log("usuario:", user)
 
   return (
+    <>
     <div className="mt-5 pt-5 containerLogin">
-       
-      {isLogin && ( 
-        <Navigate to ="/" replace={true}/> )}
-    
-
       <Container >
         <Row className="vh-100 d-flex justify-content-center align-items-center">
           <Col md={8} lg={6} xs={12}>
@@ -74,43 +61,15 @@ export default function Login() {
                   <img src="../assets/logo-AEGcolor.png" alt="logoAEG" className="logoTitle" />
                   <p className=" mb-5">Login</p>
                   <div className="mb-3">
-                    {errorLogin &&
-                        <label className="label-alert mb-3">
-                          Usuario o contraseña incorrectos
-                        </label>
-                      }
-                      
-                    <div className="login-wrapper">
-                      <form action="">
-                        {/* input user */}
-                      <input id="usuario" name="usuario" placeholder="Username" type="text" onChange={ (e) => handleChange(e.target.name, e.target.value)} className="mb-3 form-control"/>
-                        
-                        {/* input password */}
-                        <input  id="contraseña" name="contraseña" placeholder="Password" type="password" onChange={ (e) => handleChange(e.target.password, e.target.value)} param={passwordError} className="mb-3 form-control"/>
+              
+                  <form onSubmit={submitUser}>
+                    <input className="mb-3 form-control" onChange={changeValue} value={form.username} autoComplete="off" type="text" name="username" autoFocus required/>
+
+                    <input className="mb-3 form-control" onChange={changeValue} value={form.password} type="password" name="password" required/>
+
+                    <input type="submit" className="btn buttonLogin" value="Iniciar Sesión" disabled={enableSubmit}/>
+                   </form>
   
-
-                        <Form.Group
-                        className="mb-3"
-                        controlId="formBasicCheckbox"
-                      >
-                        <p className="small">
-                          <a className="textRegister" href="#!">
-                            Has olvidado tu contraseña?
-                          </a>
-                        </p>
-                      </Form.Group>
-                      <div className="d-grid">
-
-                        <button onClick={handleSubmit} className="buttonLogin">Login</button>
-                        
-                      </div>
-                      </form>
-                    </div>
-                      
-                    
-
-                      
-                    
                     <div className="mt-3">
                       <p className="mb-0  text-center">
                         No tienes cuenta{" "}
@@ -127,5 +86,6 @@ export default function Login() {
         </Row>
       </Container>
     </div>
+    </>
   );
 }
