@@ -2,12 +2,12 @@ import './app.css';
 import Navbar from './components/Navbar';
 import Main from './pages/Main';
 import CheckoutCart from './pages/CheckoutCart';
-import Login from './pages/Login';
+
 import dataProduct from "./assets/db/db"
 import { useEffect, useState } from 'react';
 import Footer from './components/Footer';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Register from './pages/Register';
+
 
 
 
@@ -85,8 +85,7 @@ function App() {
             <Routes>
               <Route path="/pedido" element={<CheckoutCart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} products={products} />} />
               <Route path="/" element={<Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>} />
-              <Route path="/login" element={<Login />} />   
-              <Route path="/register" element={<Register />} /> 
+
             </Routes>
 
           <Footer/>
