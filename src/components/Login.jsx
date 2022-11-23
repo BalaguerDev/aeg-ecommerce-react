@@ -16,13 +16,11 @@ export default function Login() {
   const [userLogin,setUserLogin] = useState("false")  
   const url = "http://localhost:3000/users";
 
-  useEffect(()=>{
-    const connection = async () => {
-        const response = await loginUsers(url);
-        setUserLogin(prev => prev = response);
-    }
-    connection()
-}, [url])
+
+
+state = {
+  users: []
+}
 
 
 
@@ -33,9 +31,10 @@ export default function Login() {
 
     if(inputUser === 0 || inputPwd === 0){
       alert("Complete los campos con sus datos de inicio de sesión")
-    } else {
-      if (username === userLogin.username && password){
-        
+ 
+
+      }
+
         setLogged("true")
         document.getElementById("formLogin").style.display="none"
         alert("Inicio de sesión exitoso")
@@ -45,16 +44,9 @@ export default function Login() {
         const inputUser = document.getElementById("inputUser").value=""
         const inputPwd = document.getElementById("inputPwd").value=""
       }
-      console.log(userLogin.username)
+
     }
- 
 
-  } 
-
-
-  
-
- 
 
 
 
@@ -94,7 +86,7 @@ export default function Login() {
                 <input type="submit" value="Iniciar Sesión" onClick={clickLogin} />
               </div>
             </form>
-            {logged === "true" && <Main/>}
+            {logged === "true" && <Main username={username}/>}
 
 
           </div>

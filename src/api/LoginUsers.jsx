@@ -1,12 +1,15 @@
-async function loginUsers () {
-    try {
-        const res = await fetch('http://localhost:3000/users')
-        const data = await res.json();
-        return data;
+import React, { Component } from 'react'
 
-    } catch(e) {
-        console.log('Datos incorrectos.')
-    }
+function fetchData() {
+    const url = 'http://localhost:3000/users'
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            this.setState({ users: data})
+
+         })
+    .catch(error => console.log('oops run to the hills!!!!', error))
 }
 
-export default loginUsers;
+
+export default fetchData;
