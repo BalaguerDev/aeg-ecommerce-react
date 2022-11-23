@@ -84,8 +84,8 @@ function App() {
         
             <Routes>
               <Route path="/pedido" element={<CheckoutCart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} products={products} />} />
-              <Route path="/" element={<Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>} />
 
+              <Route path="/" element={<Main cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} products={products}/>} />
             </Routes>
 
           <Footer/>

@@ -31,7 +31,6 @@ function Register() {
     }
 
     const handleSubmit = async (e) => {
-  
         await AddUser(formUser)
         setSuccess(true)
     }
@@ -93,7 +92,7 @@ function Register() {
 
                             <div className="d-grid">
 
-                                <input type="submit" className="btn buttonLogin" value="Register" />
+                                <input type="submit" className="btn buttonLogin" value="Registro" />
 
                             </div>
 
