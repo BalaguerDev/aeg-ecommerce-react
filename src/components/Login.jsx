@@ -5,32 +5,59 @@ import axios from "axios"
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
-import loginService from "../services/axioslogin"
+import loginUsers from "../api/LoginUsers";
+import Main from "../pages/Main";
 
 
 export default function Login() {
+  const [logged, setLogged] = useState("false")
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [user,setUser] = useState(null)
+  const [userLogin,setUserLogin] = useState("false")  
+  const url = "http://localhost:3000/users";
+
+  useEffect(()=>{
+    const connection = async () => {
+        const response = await loginUsers(url);
+        setUserLogin(prev => prev = response);
+    }
+    connection()
+}, [url])
+
+
+
+  function clickLogin(e){
+    e.preventDefault();
+    const inputUser = document.getElementById("inputUser").value
+    const inputPwd = document.getElementById("inputPwd").value
+
+    if(inputUser === 0 || inputPwd === 0){
+      alert("Complete los campos con sus datos de inicio de sesión")
+    } else {
+      if (username === userLogin.username && password){
+        
+        setLogged("true")
+        document.getElementById("formLogin").style.display="none"
+        alert("Inicio de sesión exitoso")
+      } else {
+        setLogged("false")
+        alert("Error! Usuario o contraseña incorrectos")
+        const inputUser = document.getElementById("inputUser").value=""
+        const inputPwd = document.getElementById("inputPwd").value=""
+      }
+      console.log(userLogin.username)
+    }
+ 
+
+  } 
+
+
   
-  
-  
+
  
 
 
 
-
-  const handleLogin = async (e) => {
-    e.preventDefault()
-    const user = await loginService.login({
-      username,
-      password
-    })
-
-    setUser(user)
-    setUsername("")
-    setPassword("")
-  }
   return (
     <>
       <div className="">
@@ -39,10 +66,11 @@ export default function Login() {
           <p className=" mb-2">Login</p>
           <div className="mb-3">
 
-            <form onSubmit={handleLogin}>
+            <form id="formLogin" >
               <input 
                 className="mb-3 form-control" 
                 autoComplete="off" 
+                id="inputUser"
                 type="text" 
                 value={username}
                 name="username" 
@@ -53,7 +81,8 @@ export default function Login() {
 
               <input 
                 className="mb-3 form-control" 
-                type="passwords" 
+                type="password"
+                id="inputPwd" 
                 value={password}
                 name="password" 
                 placeholder="Contraseña" 
@@ -62,9 +91,10 @@ export default function Login() {
                 onChange={({target})=> setPassword(target.value)}/>       
 
               <div className="d-grid">
-                <button>Iniciar Sesión</button>
+                <input type="submit" value="Iniciar Sesión" onClick={clickLogin} />
               </div>
             </form>
+            {logged === "true" && <Main/>}
 
 
           </div>
