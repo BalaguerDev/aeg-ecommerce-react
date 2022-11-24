@@ -66,21 +66,21 @@ export default function Navbar(props) {
                 <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                   <div className="offcanvas-header">
                     <div id="sidenav-1" className="sidenav" role="navigation" data-mdb-hidden="true" data-mdb-accordion="true">
-                      <ul className="sidenav-menu">
-                        <li className="sidenav-item">
+                     
+                        <div className="sidenav-item">
                           <div>
                             <Login />
                           </div>
                           {/* sideBar GRUPO TTI */}
-                          <li className="sidenav-item my-3">
+                          <div className="sidenav-item my-3">
                             <a className="sidenav-link titleSideNav mb-5" data-bs-toggle="collapse" href="#collapseGroup" role="button" aria-expanded="false" aria-controls="collapseExample">No tienes cuenta Registrate</a>
                             <div className="collapse mt-3" id="collapseGroup">
                               <div><Register className="mt-2" /></div>
                             </div>
                             <hr className="mt-5 mb-5" />
-                          </li>
+                          </div>
 
-                        </li>
+                        </div>
 
 
                         {/* OFERTA DEL MES */}
@@ -108,7 +108,7 @@ export default function Navbar(props) {
                             </div>
                           </div>
                         </li>
-                      </ul>
+                      
                     </div>
 
                   </div>

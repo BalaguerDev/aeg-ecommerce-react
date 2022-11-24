@@ -327,6 +327,7 @@
           background-color: #f48026;
         }.buttonLogin:hover{
           background-color: #272829;
+          color:#ebecec
         }
         .label-alert{
           color:red;
