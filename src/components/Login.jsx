@@ -2,7 +2,7 @@
 import { Col, Row, Container, Card, Form } from "react-bootstrap";
 import { useContext, useState } from 'react';
 import '../app.css';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../auth/context/AuthContext';
 import { Link, Navigate } from 'react-router-dom';
 
 
@@ -10,7 +10,7 @@ import { Link, Navigate } from 'react-router-dom';
 
 const Login = () => {
   const login = useContext(AuthContext);
-
+  
   const [loginState, setLoginState] = useState({
     username: "",
     password: "",
