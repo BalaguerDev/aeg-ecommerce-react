@@ -62,7 +62,7 @@ export default function Navbar(props) {
                 {/* /REGISTER / LOGIN / USER PROFILE  */}
 
 
-                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><HowToRegIcon fontSize='small' />Inicio sesión</a>
+                <a className="btn btn-sm btn-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><HowToRegIcon fontSize='small' />Inicio sesión</a>
                 <div className="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                   <div className="offcanvas-header">
                     <div id="sidenav-1" className="sidenav" role="navigation" data-mdb-hidden="true" data-mdb-accordion="true">
