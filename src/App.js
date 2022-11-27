@@ -7,6 +7,7 @@ import dataProduct from "./assets/db/db"
 import { useEffect, useState } from 'react';
 import Footer from './components/Footer';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { AuthProvider } from './auth/context';
 
 
 
@@ -76,7 +77,7 @@ function App() {
   
   return (
 
-    
+    <AuthProvider>
       <Router>
         
         <div className="App">
@@ -92,7 +93,7 @@ function App() {
           
         </div>
       </Router>
-
+    </AuthProvider>
      
       
  
